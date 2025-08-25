@@ -11,7 +11,7 @@
   <!-- INTRO VIDEO -->
   <div id="intro-container">
     <video id="intro-video" autoplay muted playsinline>
-      <source src="VideoNetflix.mp4" type="video/mp4">
+      <source src="Netflix Intro 4k (AI upscaled).mp4" type="video/mp4">
       Tu navegador no soporta el video.
     </video>
   </div>
@@ -23,11 +23,9 @@
     <header>
       <img src="logonetflix.png" class="logo">
       <div class="menu-icons">
-        <img src="MenuIndiceLogo.png" alt="Menú">
-        <img src="PerfilLogoCuenta.jpeg" alt="Perfil">
         <button class="menu-btn" id="btnRegistrar">Registrarse</button>
         <a href="agregar.html"><button class="menu-btn">Ingresar Películas o series</button></a>
-        <a href="sobrenosotros.html"><button class="menu-btn">Sobre Nosotros</button></a>
+        <a href="sobrenosotros.html"><button class="menu-btn">Ver listado</button></a>
       </div>
     </header>
 
@@ -48,23 +46,25 @@
     </div>
 
     <!-- GÉNEROS -->
-    <section class="curved-section">
-      <h2>¿Qué preferís ver un domingo a la noche?</h2>
-      <div class="genre-options">
-        <div class="genre"><p>Romance</p><img src="PortadaGeneroRomance.jpeg" alt="Romance"></div>
-        <div class="genre"><p>Terror</p><img src="PortadaGeneroTerror.webp" alt="Terror"></div>
-        <div class="genre"><p>Comedia</p><img src="PortadaGeneroComedia.jpeg" alt="Comedia"></div>
-        <div class="genre"><p>Studio Ghibli</p><img src="PortadaGeneroStudioGhibli.jpg" alt="Studio Ghibli"></div>
-        <div class="genre"><p>Superheroes</p><img src="PortadaGeneroSuperheroes.jpg" alt="Superheroes"></div>
-        <div class="genre"><p>Animación</p><img src="PortadaGeneroAnimacion.jpg" alt="Animación"></div>
-        <div class="genre"><p>Documental</p><img src="PortadaGeneroDocumental.jpeg" alt="Documental"></div>
-        <div class="genre"><p>Acción</p><img src="PortadaGeneroAccion.jpg" alt="Acción"></div>
-        <div class="genre"><p>Fantasía</p><img src="PortadaGeneroFantasia.jpeg" alt="Fantasía"></div>
-        <div class="genre"><p>Historia</p><img src="PortadaGeneroHistoria.jpg" alt="Historia"></div>
-        <div class="genre"><p>Policial</p><img src="PortadaGeneroPolicial.webp" alt="Policial"></div>
-        <div class="genre"><p>Vaqueros</p><img src="PortadaGeneroVaqueros.jpg" alt="Vaqueros"></div>
-      </div>
-    </section>
+<!-- GÉNEROS -->
+<section class="curved-section">
+  <h2>¿Qué preferís ver un domingo a la noche?</h2>
+  <div class="genre-options">
+    <div class="genre"><p>Romance</p><img src="Portadas/PortadaGeneroRomance.jpeg" alt="Romance"></div>
+    <div class="genre"><p>Terror</p><img src="Portadas/PortadaGeneroTerror.webp" alt="Terror"></div>
+    <div class="genre"><p>Comedia</p><img src="Portadas/PortadaGeneroComedia.jpeg" alt="Comedia"></div>
+    <div class="genre"><p>Studio Ghibli</p><img src="Portadas/PortadaGeneroStudioGhibli.jpg" alt="Studio Ghibli"></div>
+    <div class="genre"><p>Superheroes</p><img src="Portadas/PortadaGeneroSuperheroes.jpg" alt="Superhéroes"></div>
+    <div class="genre"><p>Animación</p><img src="Portadas/PortadaGeneroAnimacion.jpg" alt="Animación"></div>
+    <div class="genre"><p>Documental</p><img src="Portadas/PortadaGeneroDocumental.jpeg" alt="Documental"></div>
+    <div class="genre"><p>Acción</p><img src="Portadas/PortadaGeneroAccion.jpg" alt="Acción"></div>
+    <div class="genre"><p>Fantasía</p><img src="Portadas/PortadaGeneroFantasia.jpeg" alt="Fantasía"></div>
+    <div class="genre"><p>Historia</p><img src="Portadas/PortadaGeneroHistoria.jpg" alt="Historia"></div>
+    <div class="genre"><p>Policial</p><img src="Portadas/PortadaGeneroPolicial.webp" alt="Policial"></div>
+    <div class="genre"><p>Vaqueros</p><img src="Portadas/PortadaGeneroVaqueros.jpg" alt="Vaqueros"></div>
+  </div>
+</section>
+
 
     <div class="curved-red-bottom">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -73,8 +73,8 @@
     </div>
 
     <!-- SORPRENDEME -->
-    <section class="surprise-section">
-      <h2 class="surprise-title">No sé qué ver... ¡Sorprendeme!</h2>
+      <section class="surprise-section">
+         <h2 class="surprise-title">No sé qué ver... ¡Sorprendeme!</h2>
       <button class="surprise-button">Click aquí</button>
     </section>
 
@@ -84,35 +84,7 @@
       </svg>
     </div>
 
-    <!-- MINI BANNER -->
-    <section class="fondo-cards-mini">
-      <img src="fondo.jpg" alt="Fondos de pelis y series"
-           style="width:100%; height:120px; object-fit:cover; display:block; border-radius:20px; margin:0 auto;">
-    </section>
-  </div>
-
-  <!-- FORM REGISTRO -->
-  <div id="formRegistro">
-    <h2>Formulario de Registro</h2>
-    <form id="registroForm">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="usuario">Usuario:</label>
-      <input type="text" id="usuario" name="usuario" required />
-
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" required />
-
-      <label for="telefono">Teléfono:</label>
-      <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{7,15}" placeholder="Solo números" />
-
-      <button type="submit">Enviar</button>
-    </form>
-    <button id="volverBtn">Volver</button>
-  </div>
-
-  <!-- Vinculamos el JavaScript externo -->
+<!-- Vinculamos el JavaScript externo -->
   <script src="script.js"></script>
 </body>
 </html>
