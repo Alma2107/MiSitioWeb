@@ -1,0 +1,100 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; font-family: Arial, sans-serif; background: black; color: white; }
+
+/* INTRO VIDEO */
+#intro-container {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: black; display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+}
+#intro-video { width: 100%; height: 100%; object-fit: cover; }
+#main-content { display: none; }
+
+/* HEADER */
+header {
+  background-color: black; display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 30px;
+}
+.logo { height: 60px; }
+.menu-icons { display: flex; align-items: center; gap: 20px; }
+.menu-icons img { height: 40px; }
+.menu-btn {
+  background-color: red; color: white; font-weight: bold;
+  border: none; padding: 12px 20px; font-size: 16px;
+  border-radius: 30px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+}
+.menu-btn:hover { transform: scale(1.05); box-shadow: 0 0 12px red; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.6)), url('fondo.jpg');
+  background-size: cover; background-position: center;
+  min-height: 80vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 100px; text-align: center;
+  font-size: 50px; font-weight: bold; color: red; text-shadow: 2px 2px 4px black;
+}
+
+/* CURVAS ROJAS */
+.curved-red-top, .curved-red-bottom {
+  display: block; width: 100%; height: 60px; background-color: transparent;
+}
+.curved-red-top svg, .curved-red-bottom svg { display: block; width: 100%; height: 100%; }
+
+/* SECCIÓN GÉNEROS */
+.curved-section { background: linear-gradient(to bottom, black, #111); padding: 50px 20px; text-align: center; }
+.curved-section h2 { font-size: 26px; margin-bottom: 30px; }
+.genre-options { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.genre { width: 220px; }
+.genre p { margin-bottom: 10px; font-weight: bold; font-size: 18px; }
+.genre img {
+  width: 100%; height: 300px; object-fit: cover;
+  border: 4px solid red; border-radius: 20px; box-shadow: 0 0 15px red;
+  transition: transform 0.3s;
+}
+.genre img:hover { transform: scale(1.05); }
+
+/* SORPRÉNDEME */
+.surprise-section {
+  background: url("FONDOSORPRESA-Photoroom.png") center center no-repeat fixed;
+  background-size: contain; min-height: 400px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.surprise-title {
+  font-size: 40px; color: #fff; font-weight: bold; margin-bottom: 30px; text-shadow: 2px 2px 8px #000;
+}
+.surprise-button {
+  background-color: red; color: white; font-weight: bold;
+  font-size: 28px; border: none; padding: 18px 60px; border-radius: 40px;
+  cursor: pointer; box-shadow: 0 0 10px #000;
+}
+
+/* MINI CARDS FONDO */
+.fondo-cards-mini {
+  width: 100%; margin: 80px 0 60px; display: flex; justify-content: center; align-items: center;
+}
+
+/* FORMULARIO REGISTRO */
+#formRegistro {
+  display: none; background: #111; padding: 40px 20px; box-sizing: border-box;
+  max-width: 400px; margin: 40px auto; border-radius: 10px;
+  box-shadow: 0 0 15px rgba(229,9,20,0.8); color: white;
+}
+#formRegistro h2 { text-align: center; margin-bottom: 25px; color: #e50914; }
+#formRegistro label { display: block; margin: 15px 0 6px; font-weight: bold; }
+#formRegistro input {
+  width: 100%; padding: 10px; border-radius: 6px; border: none; font-size: 1rem;
+}
+#formRegistro input:focus { outline: 2px solid #e50914; }
+#formRegistro button {
+  margin-top: 25px; width: 100%; padding: 12px;
+  background: #e50914; border: none; font-size: 1.1rem; font-weight: bold;
+  border-radius: 6px; cursor: pointer; color: white;
+}
+#formRegistro button:hover { background: #b00710; }
+#volverBtn {
+  margin-top: 15px; display: block; background: transparent; border: none;
+  color: #e50914; cursor: pointer; text-align: center;
+  font-weight: bold; text-decoration: underline;
+}
