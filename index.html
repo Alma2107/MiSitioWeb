@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Netflix Mood</title>
-  <!-- Vinculamos el CSS externo -->
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netflix Mood (SPA)</title>
+ <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
   <!-- INTRO VIDEO -->
   <div id="intro-container">
     <video id="intro-video" autoplay muted playsinline>
-      <source src="Netflix Intro 4k (AI upscaled).mp4" type="video/mp4">
+      <source src="Netflix Intro 4k (AI upscaled).mp4" type="video/mp4" />
       Tu navegador no soporta el video.
     </video>
   </div>
@@ -21,11 +20,10 @@
 
     <!-- HEADER -->
     <header>
-      <img src="logonetflix.png" class="logo">
+      <img src="logonetflix.png" class="logo" alt="Netflix Mood" />
       <div class="menu-icons">
         <button class="menu-btn" id="btnRegistrar">Registrarse</button>
-        <a href="agregar.html"><button class="menu-btn">Ingresar Películas o series</button></a>
-        <a href="sobrenosotros.html"><button class="menu-btn">Ver listado</button></a>
+        <button class="menu-btn" id="btnVerListado">Ver listado</button>
       </div>
     </header>
 
@@ -35,9 +33,7 @@
       </svg>
     </div>
 
-    <div class="hero">
-      Domingo, sillón y pelis. Vos elegís el mood, nosotros el resto.
-    </div>
+    <div class="hero">Domingo, sillón y pelis. Vos elegís el mood, nosotros el resto.</div>
 
     <div class="curved-red-top">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -46,25 +42,17 @@
     </div>
 
     <!-- GÉNEROS -->
-<!-- GÉNEROS -->
-<section class="curved-section">
-  <h2>¿Qué preferís ver un domingo a la noche?</h2>
-  <div class="genre-options">
-    <div class="genre"><p>Romance</p><img src="Portadas/PortadaGeneroRomance.jpeg" alt="Romance"></div>
-    <div class="genre"><p>Terror</p><img src="Portadas/PortadaGeneroTerror.webp" alt="Terror"></div>
-    <div class="genre"><p>Comedia</p><img src="Portadas/PortadaGeneroComedia.jpeg" alt="Comedia"></div>
-    <div class="genre"><p>Studio Ghibli</p><img src="Portadas/PortadaGeneroStudioGhibli.jpg" alt="Studio Ghibli"></div>
-    <div class="genre"><p>Superheroes</p><img src="Portadas/PortadaGeneroSuperheroes.jpg" alt="Superhéroes"></div>
-    <div class="genre"><p>Animación</p><img src="Portadas/PortadaGeneroAnimacion.jpg" alt="Animación"></div>
-    <div class="genre"><p>Documental</p><img src="Portadas/PortadaGeneroDocumental.jpeg" alt="Documental"></div>
-    <div class="genre"><p>Acción</p><img src="Portadas/PortadaGeneroAccion.jpg" alt="Acción"></div>
-    <div class="genre"><p>Fantasía</p><img src="Portadas/PortadaGeneroFantasia.jpeg" alt="Fantasía"></div>
-    <div class="genre"><p>Historia</p><img src="Portadas/PortadaGeneroHistoria.jpg" alt="Historia"></div>
-    <div class="genre"><p>Policial</p><img src="Portadas/PortadaGeneroPolicial.webp" alt="Policial"></div>
-    <div class="genre"><p>Vaqueros</p><img src="Portadas/PortadaGeneroVaqueros.jpg" alt="Vaqueros"></div>
-  </div>
-</section>
-
+    <section class="curved-section" id="genres">
+      <h2>¿Qué preferís ver un domingo a la noche?</h2>
+      <div class="genre-options">
+        <div class="genre" data-genre="Romance"><p>Romance</p><img src="Portadas/PortadaGeneroRomance.jpeg" alt="Romance"/></div>
+        <div class="genre" data-genre="Terror"><p>Terror</p><img src="Portadas/PortadaGeneroTerror.webp" alt="Terror"/></div>
+        <div class="genre" data-genre="Comedia"><p>Comedia</p><img src="Portadas/PortadaGeneroComedia.jpeg" alt="Comedia"/></div>
+        <div class="genre" data-genre="Studio Ghibli"><p>Studio Ghibli</p><img src="Portadas/PortadaGeneroStudioGhibli.jpg" alt="Studio Ghibli"/></div>
+        <div class="genre" data-genre="Superhéroes"><p>Superhéroes</p><img src="Portadas/PortadaGeneroSuperheroes.jpg" alt="Superhéroes"/></div>
+        <div class="genre" data-genre="Animación"><p>Animación</p><img src="Portadas/PortadaGeneroAnimacion.jpg" alt="Animación"/></div>
+      </div>
+    </section>
 
     <div class="curved-red-bottom">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -72,19 +60,33 @@
       </svg>
     </div>
 
-    <!-- SORPRENDEME -->
-      <section class="surprise-section">
-         <h2 class="surprise-title">No sé qué ver... ¡Sorprendeme!</h2>
-      <button class="surprise-button">Click aquí</button>
+    <!-- SORPRÉNDEME -->
+    <section class="surprise-section">
+      <h2 class="surprise-title">No sé qué ver... ¡Sorprendeme!</h2>
+      <button class="surprise-button" id="btnSurprise">Click aquí</button>
     </section>
 
-    <div class="curved-red-top">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,50 L1440,50" fill="transparent" stroke="red" stroke-width="16"/>
-      </svg>
+    <!-- VISTA DINÁMICA DE GÉNERO / LISTADO -->
+<section id="genre-view" class="hidden" aria-live="polite">
+  <div class="gv-header">
+    <h2 class="gv-title" id="gvTitle">Género</h2>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <button class="back-btn" id="btnBack">← Volver</button>
     </div>
+  </div>
+  <div class="cards" id="cards"></div>
 
-<!-- Vinculamos el JavaScript externo -->
+  <!-- 🔹 NUEVA curva roja SOLO en la vista de género -->
+  <div class="curved-red-bottom">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,0 Q720,180 1440,0" fill="transparent" stroke="red" stroke-width="16"/>
+    </svg>
+  </div>
+</section>
+
+<footer>Hecho con ♥ para practicar HTML/CSS/JS — Netflix</footer>
+</div>
   <script src="script.js"></script>
-</body>
-</html>
+  </body>
+  </html>
+  
