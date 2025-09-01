@@ -51,7 +51,12 @@
         <div class="genre" data-genre="Studio Ghibli"><p>Studio Ghibli</p><img src="Portadas/PortadaGeneroStudioGhibli.jpg" alt="Studio Ghibli"/></div>
         <div class="genre" data-genre="Superhéroes"><p>Superhéroes</p><img src="Portadas/PortadaGeneroSuperheroes.jpg" alt="Superhéroes"/></div>
         <div class="genre" data-genre="Animación"><p>Animación</p><img src="Portadas/PortadaGeneroAnimacion.jpg" alt="Animación"/></div>
-          <div class="genre" data-genre="Princesas"><p>Princesas</p><img src="Portadas/PortadaGeneroPrincesa.jpg" alt="Princesas"/></div>
+        <div class="genre" data-genre="Princesas"><p>Princesas</p><img src="Portadas/PortadaGeneroPrincesa.jpg" alt="Princesas"/></div>
+         <div class="genre" data-genre="Historia"><p>Historia</p><img src="Portadas/PortadaGeneroHistoria.jpg" alt="Historia"/></div>
+        <div class="genre" data-genre="Fantasía"><p>Fantasia</p><img src="Portadas/PortadaGeneroFantasia.jpeg" alt="Fantasía"/></div>
+        <div class="genre" data-genre="Policial"><p>Policial</p><img src="Portadas/PortadaGeneroPolicial.webp" alt="Policial"/></div>
+        <div class="genre" data-genre="Acción"><p>Accion</p><img src="Portadas/PortadaGeneroAccion.jpg" alt="Acción"/></div>
+        <div class="genre" data-genre="Drama"><p>Para Llorar</p><img src="Portadas/PortadaGeneroParaLlorar.jpeg" alt="Drama"/></div>
       </div>
     </section>
 
@@ -67,6 +72,25 @@
       <button class="surprise-button" id="btnSurprise">Click aquí</button>
     </section>
 
+    <!-- RESULTADO SORPRÉNDEME -->
+<section id="surprise-result" class="hidden">
+  <div class="surprise-card">
+    <img id="sPoster" src="" alt="Poster película" />
+    <div class="s-info">
+      <h2 id="sTitle"></h2>
+      <p id="sDesc"></p>
+      <p id="sPlatform"></p>
+      <textarea id="sReview" placeholder="Escribí tu reseña aquí..."></textarea>
+      <div class="btn-group">
+        <button id="sSave" class="btn btn-save">💾 Guardar reseña</button>
+        <button id="sBack" class="btn btn-back">⬅ Volver</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
     <!-- VISTA DINÁMICA DE GÉNERO / LISTADO -->
 <section id="genre-view" class="hidden" aria-live="polite">
   <div class="gv-header">
@@ -77,7 +101,7 @@
   </div>
   <div class="cards" id="cards"></div>
 
-  <!-- 🔹 NUEVA curva roja SOLO en la vista de género -->
+  <!--  curva roja SOLO en la vista de género -->
   <div class="curved-red-bottom">
     <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
       <path d="M0,0 Q720,180 1440,0" fill="transparent" stroke="red" stroke-width="16"/>
@@ -85,8 +109,10 @@
   </div>
 </section>
 
-<footer>Hecho con ♥ para practicar HTML/CSS/JS — Netflix</footer>
+<footer>Alma Azul Carena - Programacion - 5°3 - Redes y Diseño de Paginas Web</footer>
 </div>
   <script src="script.js"></script>
+  
+
   </body>
   </html>

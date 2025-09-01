@@ -1,12 +1,7 @@
 // ====== Intro video ======
-// ====== Intro logic ======
 const introVideo = document.getElementById('intro-video');
 const introContainer = document.getElementById('intro-container');
 const mainContent = document.getElementById('main-content');
-const formRegistro = document.getElementById('formRegistro');
-const btnRegistrar = document.getElementById('btnRegistrar');
-const volverBtn = document.getElementById('volverBtn');
-const registroForm = document.getElementById('registroForm');
 
 introVideo.onended = () => {
   introContainer.style.display = 'none';
@@ -17,7 +12,6 @@ introVideo.onended = () => {
 const genresGrid = document.getElementById('genres');
 const gvSection = document.getElementById('genre-view');
 const gvTitle = document.getElementById('gvTitle');
-const btnBack = document.getElementById('btnBack');
 const btnSurprise = document.getElementById('btnSurprise');
 const cardsEl = document.getElementById('cards');
 
@@ -41,6 +35,7 @@ function renderStars(value) {
   return out;
 }
 
+//catalogo
 // ====== CATALOG ======
 // Aquí va tu CATALOG tal como lo pusiste
 const CATALOG = [
@@ -380,6 +375,299 @@ const CATALOG = [
 
 
 
+// Historia
+
+
+ { id: 'h1', genre: 'Historia', title: 'Gladiador', type:'movie', description:'Un general romano es traicionado y convertido en esclavo, pero lucha en la arena como gladiador para vengar la muerte de su familia y del emperador que lo traicionó.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Gladiador.jpg' },
+{ id: 'h2', genre: 'Historia', title: 'Troya', type:'movie', description:'Basada en la Ilíada de Homero, narra la guerra entre griegos y troyanos tras el rapto de Helena, donde Aquiles y Héctor se enfrentan en una batalla legendaria.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Troya.jpg' },
+{ id: 'h3', genre: 'Historia', title: '300', type:'movie', description:'El rey Leónidas lidera a 300 espartanos en la batalla de las Termópilas contra el vasto ejército persa de Jerjes.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/300.jpg' },
+{ id: 'h4', genre: 'Historia', title: 'Rey Arturo', type:'movie', description:'Una reinterpretación del mito artúrico, donde Arturo y sus caballeros luchan contra invasores sajones en Britania.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Rey_Arturo.jpg' },
+{ id: 'h5', genre: 'Historia', title: 'La sociedad de la nieve', type:'movie', description:'Relato del trágico accidente aéreo de 1972 en los Andes, donde los sobrevivientes recurrieron a medidas extremas para mantenerse con vida.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_sociedad_de_la_nieve.jpg' },
+{ id: 'h6', genre: 'Historia', title: 'La vida es bella', type:'movie', description:'Un padre usa el humor y la imaginación para proteger a su hijo del horror de un campo de concentración nazi.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_vida_es_bella.jpg' },
+{ id: 'h7', genre: 'Historia', title: 'El pianista', type:'movie', description:'Basada en hechos reales, sigue la historia de Władysław Szpilman, un pianista judío que lucha por sobrevivir durante la ocupación nazi en Polonia.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/El_pianista.webp' },
+{ id: 'h8', genre: 'Historia', title: '12 Años de esclavitud', type:'movie', description:'Un hombre negro libre es secuestrado y vendido como esclavo en el sur de Estados Unidos, luchando por recuperar su libertad.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/12_Años_de_esclavitud.webp' },
+{ id: 'h9', genre: 'Historia', title: 'Cartas desde Iwo Jima', type:'movie', description:'La batalla de Iwo Jima narrada desde el punto de vista de los soldados japoneses que la defendieron.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Cartas_desde_Iwo_Jima.jpeg' },
+{ id: 'h10', genre: 'Historia', title: 'Dunkerque', type:'movie', description:'Miles de soldados aliados son evacuados de Dunkerque durante la Segunda Guerra Mundial, rodeados por las fuerzas nazis.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Dunkerque.jpg' },
+{ id: 'h11', genre: 'Historia', title: 'El hundimiento', type:'movie', description:'Los últimos días de Adolf Hitler en su búnker en Berlín, mientras el Tercer Reich se derrumba.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/El_hundimiento.webp' },
+{ id: 'h12', genre: 'Historia', title: 'En tierra hostil', type:'movie', description:'Un escuadrón estadounidense de artificieros en Irak enfrenta el peligro constante de bombas y atentados.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/En_tierra_hostil.jpg' },
+{ id: 'h13', genre: 'Historia', title: 'Lazos de guerra', type:'movie', description:'Dos hermanos coreanos son separados por la Guerra de Corea y se encuentran en bandos opuestos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Lazos_de_guerra.jpeg' },
+{ id: 'h14', genre: 'Historia', title: 'La lista de Schindler', type:'movie', description:'La historia de Oskar Schindler, un empresario alemán que salvó a más de mil judíos durante el Holocausto.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_lista_de_Schindler.jpg' },
+{ id: 'h15', genre: 'Historia', title: 'Salvar al soldado Ryan', type:'movie', description:'Tras el desembarco en Normandía, un grupo de soldados recibe la misión de rescatar a un paracaidista cuyo hermanos han muerto en combate.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Salvar_al_soldado_Ryan.jpg' },
+{ id: 'h16', genre: 'Historia', title: 'Sin novedad en el frente', type:'movie', description:'Un joven alemán experimenta los horrores de la Primera Guerra Mundial desde las trincheras, perdiendo la inocencia ante la brutalidad del conflicto.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Sin_novedad_en_el_frente.jpg' },
+{ id: 'h17', genre: 'Historia', title: 'La chaqueta metálica', type:'movie', description:'Un grupo de jóvenes reclutas estadounidenses vive el duro entrenamiento militar y luego son enviados a combatir en la Guerra de Vietnam.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_chaqueta_metalica.jpeg' },
+{ id: 'h18', genre: 'Historia', title: 'Tiempo de guerra', type:'movie', description:'Drama bélico contemporáneo que retrata las vivencias de soldados en un conflicto armado moderno, mostrando camaradería y sacrificio.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Tiempo_de_guerra.webp' },
+{ id: 'h19', genre: 'Historia', title: 'Roma, ciudad abierta', type:'movie', description:'Clásico del neorrealismo italiano que narra la resistencia contra la ocupación nazi en Roma durante la Segunda Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Roma_ciudad_abierta.jpg' },
+{ id: 'h20', genre: 'Historia', title: 'Senderos de gloria', type:'movie', description:'Durante la Primera Guerra Mundial, un coronel francés defiende a sus hombres de ser fusilados injustamente por cobardía.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Senderos_de_gloria.jpeg' },
+{ id: 'h21', genre: 'Historia', title: 'El cazador', type:'movie', description:'Tres amigos de un pueblo obrero son marcados para siempre por la Guerra de Vietnam, entre traumas y pérdidas.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/El_cazador.jpeg' },
+{ id: 'h22', genre: 'Historia', title: '1917', type:'movie', description:'Dos soldados británicos reciben una misión imposible: atravesar territorio enemigo para entregar un mensaje que puede salvar a cientos de vidas.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/1917.webp' },
+{ id: 'h23', genre: 'Historia', title: 'La gran ilusión', type:'movie', description:'Un grupo de prisioneros franceses en la Primera Guerra Mundial intenta escapar de un campo alemán, mostrando lazos humanos más allá del conflicto.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_gran_ilusion.webp' },
+{ id: 'h24', genre: 'Historia', title: 'Lazos de vida', type:'movie', description:'Relato emotivo sobre las consecuencias de la guerra y los vínculos que se forman en medio de la tragedia.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Lazos_de_vida.jpg' },
+{ id: 'h25', genre: 'Historia', title: 'Anónima: una mujer en Berlín', type:'movie', description:'Una mujer alemana narra sus vivencias durante la ocupación soviética de Berlín en 1945, basada en un diario real.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Anonima_una_mujer_en_Berlin.jpg' },
+{ id: 'h26', genre: 'Historia', title: 'Primero mataron a mi padre', type:'movie', description:'Una niña camboyana cuenta su experiencia bajo el brutal régimen de los Jemeres Rojos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Primero_mataron_a_mi_padre.webp' },
+{ id: 'h27', genre: 'Historia', title: 'Juegos prohibidos', type:'movie', description:'Una niña huérfana y un niño campesino en la Francia ocupada por los nazis crean un juego secreto para afrontar la guerra.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Juegos_prohibidos.jpg' },
+{ id: 'h28', genre: 'Historia', title: 'Patton', type:'movie', description:'Biografía del general George S. Patton, uno de los líderes militares más polémicos y brillantes de la Segunda Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Patton.jpeg' },
+{ id: 'h29', genre: 'Historia', title: 'Un pasado imborrable', type:'movie', description:'Un soldado traumatizado por la Guerra de Corea intenta reconstruir su vida mientras lidia con el dolor de los recuerdos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Un_Pasado_Imborrable.jpg' },
+{ id: 'h30', genre: 'Historia', title: 'La batalla de Argel', type:'movie', description:'Recrea la lucha por la independencia de Argelia frente al dominio colonial francés.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_batalla_de_Argel.webp' },
+{ id: 'h31', genre: 'Historia', title: 'Blitz', type:'movie', description:'Relato sobre los bombardeos alemanes en Londres durante la Segunda Guerra Mundial, conocidos como el Blitz.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Blitz.jpeg' },
+{ id: 'h32', genre: 'Historia', title: 'El imperio del sol', type:'movie', description:'Un niño inglés sobrevive en Shanghái durante la ocupación japonesa en la Segunda Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/El_imperio_del_sol.jpg' },
+{ id: 'h34', genre: 'Historia', title: 'La infancia de Iván', type:'movie', description:'Un niño huérfano trabaja como espía para el ejército soviético durante la Segunda Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_infancia_de_Ivan.jpeg' },
+{ id: 'h35', genre: 'Historia', title: 'La vergüenza', type:'movie', description:'Una pareja sueca intenta sobrevivir cuando la guerra llega a su isla, poniendo a prueba su relación y moralidad.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_verguenza.jpg' },
+{ id: 'h36', genre: 'Historia', title: 'Enemigo invisible', type:'movie', description:'Un equipo militar debe decidir si lanzar un ataque con drones contra terroristas, enfrentando dilemas éticos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Enemigo_invisible..jpeg' },
+{ id: 'h37', genre: 'Historia', title: 'Corazón valiente', type:'movie', description:'William Wallace lidera la rebelión escocesa contra la opresión inglesa en el siglo XIII.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Corazon_valiente.webp' },
+{ id: 'h38', genre: 'Historia', title: 'La delgada línea roja', type:'movie', description:'Un grupo de soldados estadounidenses reflexiona sobre la vida y la guerra durante la batalla de Guadalcanal.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_delgada_linea_roja..jpg' },
+{ id: 'h39', genre: 'Historia', title: 'Europa, Europa', type:'movie', description:'La increíble historia real de un joven judío que se hace pasar por nazi para sobrevivir en la Segunda Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Europa_Europa.jpg' },
+{ id: 'h40', genre: 'Historia', title: 'Mash', type:'movie', description:'Una sátira sobre un grupo de médicos del ejército durante la Guerra de Corea.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Mash.jpeg' },
+{ id: 'h41', genre: 'Historia', title: 'Enemigo al acecho', type:'movie', description:'Dos francotiradores, uno soviético y otro alemán, se enfrentan en la batalla de Stalingrado.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Enemigo_al_acecho.jpg' },
+{ id: 'h42', genre: 'Historia', title: 'El patriota', type:'movie', description:'Un granjero se convierte en héroe al liderar la resistencia durante la Guerra de Independencia de Estados Unidos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/El_patriota.jpg' },
+{ id: 'h43', genre: 'Historia', title: 'El gran desfile', type:'movie', description:'Un joven estadounidense experimenta el amor y el horror de la Primera Guerra Mundial en Francia.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/El_gran_desfile.jpg' },
+{ id: 'h44', genre: 'Historia', title: 'El puente sobre el río Kwai', type:'movie', description:'Prisioneros británicos son obligados a construir un puente para los japoneses en la Segunda Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/El_puente_sobre_el_rio_Kwai.jp.jpg' },
+{ id: 'h45', genre: 'Historia', title: '1914', type:'movie', description:'Relato sobre los acontecimientos que marcaron el inicio de la Primera Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/1914.jpg' },
+{ id: 'h46', genre: 'Historia', title: 'Casablanca', type:'movie', description:'Un hombre cínico dueño de un café en Marruecos se enfrenta a decisiones de amor y resistencia en plena Segunda Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Casablanca.jpg' },
+{ id: 'h47', genre: 'Historia', title: 'Escuadrón rojo', type:'movie', description:'Película de guerra sobre pilotos soviéticos en la Segunda Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Escuadron_rojo.jpeg' },
+{ id: 'h48', genre: 'Historia', title: 'La caída del halcón negro', type:'movie', description:'Soldados estadounidenses quedan atrapados en Mogadiscio, Somalia, durante una misión fallida.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/La_caida_del_halcon_negro.jpg' },
+{ id: 'h50', genre: 'Historia', title: 'Mandarinas', type:'movie', description:'Durante la guerra en Abjasia, un granjero estonio cuida a dos soldados enemigos heridos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Mandarinas.jpg' },
+{ id: 'h52', genre: 'Historia', title: 'Vivir al límite', type:'movie', description:'Un equipo de artificieros en Irak enfrenta el peligro constante de bombas y atentados.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Vivir_al_limite.jpg' },
+{ id: 'h53', genre: 'Historia', title: 'Hotel Ruanda', type:'movie', description:'Un hotelero protege a cientos de refugiados durante el genocidio de Ruanda en 1994.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Hotel_Ruanda.jpeg' },
+{ id: 'h54', genre: 'Historia', title: '¡Tora! ¡Tora! ¡Tora!', type:'movie', description:'Relato detallado del ataque japonés a Pearl Harbor en 1941.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Tora_Tora_Tora.jpg' },
+{ id: 'h55', genre: 'Historia', title: 'Senderos de gloria', type:'movie', description:'El coronel Dax lucha por salvar a sus hombres de un juicio militar injusto durante la Primera Guerra Mundial.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasHistoria/Senderos_de_gloria.jpg' },
+
+
+
+
+
+
+
+
+//Fantasia
+
+{ id: 'f1', genre: 'Fantasía', title: 'Harry Potter y la piedra filosofal', type:'movie', description:'Un niño descubre que es un mago y comienza su aventura en Hogwarts, enfrentando al mago oscuro que asesinó a sus padres.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Harry_Potter_1.jpg' },
+{ id: 'f2', genre: 'Fantasía', title: 'Harry Potter y la cámara secreta', type:'movie', description:'Harry regresa a Hogwarts donde una misteriosa cámara ha sido abierta, liberando un peligro mortal para los estudiantes.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Harry_Potter_2.jpg' },
+{ id: 'f3', genre: 'Fantasía', title: 'Harry Potter y el prisionero de Azkaban', type:'movie', description:'Harry se enfrenta a Sirius Black, un prisionero fugado, mientras descubre secretos de su pasado.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Harry_Potter_3.jpg' },
+{ id: 'f4', genre: 'Fantasía', title: 'Harry Potter y el cáliz de fuego', type:'movie', description:'Harry compite en el Torneo de los Tres Magos y se enfrenta al regreso de Lord Voldemort.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Harry_Potter_4.jpg' },
+{ id: 'f5', genre: 'Fantasía', title: 'Harry Potter y la Orden del Fénix', type:'movie', description:'Harry lidera a sus compañeros contra la amenaza de Voldemort y la negación del Ministerio de Magia.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Harry_Potter_5.jpeg' },
+{ id: 'f6', genre: 'Fantasía', title: 'Harry Potter y el misterio del príncipe', type:'movie', description:'Harry descubre más sobre los horrocruxes mientras Hogwarts se prepara para la guerra.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Harry_Potter_6.png' },
+{ id: 'f7', genre: 'Fantasía', title: 'Harry Potter y las Reliquias de la Muerte: Parte 1', type:'movie', description:'Harry, Ron y Hermione dejan Hogwarts para buscar y destruir los horrocruxes de Voldemort.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Harry_Potter_7_1.png' },
+{ id: 'f8', genre: 'Fantasía', title: 'Harry Potter y las Reliquias de la Muerte: Parte 2', type:'movie', description:'La batalla final entre Harry y Voldemort determina el destino del mundo mágico.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Harry_Potter_7_2.jpg' },
+{ id: 'f9', genre: 'Fantasía', title: 'El Señor de los Anillos: La comunidad del anillo', type:'movie', description:'Frodo Bolsón recibe el Anillo Único y emprende un peligroso viaje para destruirlo en Mordor.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/LOTR1.jpg' },
+{ id: 'f10', genre: 'Fantasía', title: 'El Señor de los Anillos: Las dos torres', type:'movie', description:'La Comunidad se divide mientras se avecina la guerra, con Frodo y Sam rumbo a Mordor y Aragorn liderando la resistencia.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/LOTR2.jpg' },
+{ id: 'f11', genre: 'Fantasía', title: 'El Señor de los Anillos: El retorno del rey', type:'movie', description:'La batalla final por la Tierra Media enfrenta a los ejércitos libres contra Sauron mientras Frodo llega al Monte del Destino.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/LOTR3.jpg' },
+{ id: 'f12', genre: 'Fantasía', title: 'Warcraft: El primer encuentro de dos mundos', type:'movie', description:'La guerra entre humanos y orcos comienza cuando los portales de Azeroth se abren hacia otro mundo.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Warcraft.jpg' },
+{ id: 'f13', genre: 'Fantasía', title: 'Willow', type:'movie', description:'Un joven aspirante a mago protege a una niña destinada a derrotar a una reina malvada.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Willow.webp' },
+{ id: 'f14', genre: 'Fantasía', title: 'Conan el Bárbaro', type:'movie', description:'Conan busca vengar la muerte de sus padres enfrentando a un malvado hechicero.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Conan_Barbaro.jpg' },
+{ id: 'f15', genre: 'Fantasía', title: 'Conan el Destructor', type:'movie', description:'Conan debe escoltar a una princesa en un viaje lleno de magia, criaturas y traiciones.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Conan_Destructor.webp' },
+{ id: 'f16', genre: 'Fantasía', title: 'Stardust: El misterio de la estrella', type:'movie', description:'Un joven cruza un muro mágico para encontrar una estrella caída, sin saber que es en realidad una mujer con poderes.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Stardust.jpg' },
+{ id: 'f17', genre: 'Fantasía', title: 'Eragon', type:'movie', description:'Un joven campesino descubre un huevo de dragón y se convierte en jinete, luchando contra un imperio malvado.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Eragon.jpg' },
+{ id: 'f18', genre: 'Fantasía', title: 'El Hobbit: Un viaje inesperado', type:'movie', description:'Bilbo Bolsón se une a un grupo de enanos para recuperar su reino del dragón Smaug.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Hobbit1.jpeg' },
+{ id: 'f19', genre: 'Fantasía', title: 'El Hobbit: La desolación de Smaug', type:'movie', description:'La compañía continúa su viaje hacia la Montaña Solitaria para enfrentar al temible dragón.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Hobbit2.jpg' },
+{ id: 'f20', genre: 'Fantasía', title: 'El Hobbit: La batalla de los cinco ejércitos', type:'movie', description:'La codicia desata un conflicto épico entre humanos, elfos, enanos y orcos.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Hobbit3.jpg' },
+{ id: 'f21', genre: 'Fantasía', title: 'Las crónicas de Narnia: El león, la bruja y el armario', type:'movie', description:'Cuatro hermanos descubren un mundo mágico gobernado por una bruja malvada y un león sabio llamado Aslan.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Narnia1.jpg' },
+{ id: 'f22', genre: 'Fantasía', title: 'Las crónicas de Narnia: El príncipe Caspian', type:'movie', description:'Los hermanos Pevensie regresan a Narnia para ayudar al príncipe Caspian a recuperar su trono.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Narnia2.jpg' },
+{ id: 'f23', genre: 'Fantasía', title: 'Las crónicas de Narnia: La travesía del Viajero del Alba', type:'movie', description:'Lucy y Edmund se embarcan en un viaje marítimo junto al rey Caspian hacia los confines del mundo de Narnia.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Narnia3.jpg' },
+{ id: 'f24', genre: 'Fantasía', title: 'Percy Jackson y el ladrón del rayo', type:'movie', description:'Un adolescente descubre que es hijo de Poseidón y debe evitar una guerra entre dioses griegos.', platform:'Disney+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Percy_Jackson1.jpg' },
+{ id: 'f25', genre: 'Fantasía', title: 'Percy Jackson y el mar de los monstruos', type:'movie', description:'Percy y sus amigos deben encontrar el Vellocino de Oro para salvar su campamento.', platform:'Disney+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Percy_Jackson2.jpg' },
+{ id: 'f26', genre: 'Fantasía', title: 'Alicia en el País de las Maravillas', type:'movie', description:'Alicia regresa al País de las Maravillas para enfrentar a la Reina Roja y cumplir su destino.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Alicia.webp' },
+{ id: 'f27', genre: 'Fantasía', title: 'Alicia a través del espejo', type:'movie', description:'Alicia viaja en el tiempo para salvar al Sombrerero Loco y descubrir secretos del mundo de fantasía.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Alicia2.jpg' },
+{ id: 'f28', genre: 'Fantasía', title: 'La brújula dorada', type:'movie', description:'Una niña se embarca en una aventura para descubrir la verdad sobre un misterioso polvo y salvar a su mejor amigo.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/La_brujula_dorada.jpg' },
+{ id: 'f29', genre: 'Fantasía', title: 'El cristal encantado', type:'movie', description:'Un joven elfo debe restaurar un cristal mágico para salvar su mundo de la oscuridad.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/El_Cristal_Encantado.jpg' },
+{ id: 'f30', genre: 'Fantasía', title: 'El laberinto del fauno', type:'movie', description:'En la posguerra española, una niña descubre un mundo mágico donde debe superar pruebas para demostrar que es la princesa perdida.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/El_laberinto_del_fauno.webp' },
+{ id: 'f31', genre: 'Fantasía', title: 'La historia interminable', type:'movie', description:'Un niño lee un libro mágico y se adentra en un mundo fantástico donde debe salvar al reino de la Nada.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/La_historia_interminable.jpg' },
+{ id: 'f32', genre: 'Fantasía', title: 'El nombre del viento', type:'movie', description:'Un joven con talento mágico narra su vida, su aprendizaje y su destino como mago legendario.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/El_nombre_del_viento.jpeg' },
+{ id: 'f33', genre: 'Fantasía', title: 'Eragon: La venganza del dragón', type:'movie', description:'Eragon continúa su lucha contra los malvados imperios, montando a su dragón Saphira.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Eragon2.jpeg' },
+{ id: 'f34', genre: 'Fantasía', title: 'El aprendiz de hechicero', type:'movie', description:'Un joven aprendiz debe aprender magia rápidamente para enfrentar a un poderoso enemigo.', platform:'Disney+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/El_aprendiz_de_hechicero.webp' },
+{ id: 'f35', genre: 'Fantasía', title: 'Percy Jackson: El héroe del Olimpo', type:'movie', description:'Percy y sus amigos deben salvar al mundo de un desastre provocado por los dioses griegos.', platform:'Disney+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Percy_Heroe_Olimpo.jpeg' },
+{ id: 'f39', genre: 'Fantasía', title: 'El séptimo hijo', type:'movie', description:'Un joven aprendiz de cazador de brujas debe enfrentarse a una poderosa bruja que amenaza al mundo.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/El_septimo_hijo.jpg' },
+{ id: 'f40', genre: 'Fantasía', title: 'Crónicas de la Torre', type:'movie', description:'Un grupo de magos jóvenes lucha por proteger su torre de antiguos poderes oscuros.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Cronicas_de_la_Torre.jpg' },
+{ id: 'f41', genre: 'Fantasía', title: 'Las crónicas de Spiderwick', type:'movie', description:'Tres hermanos descubren un mundo oculto lleno de criaturas mágicas y deben proteger un libro poderoso.', platform:'Disney+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Spiderwick.jpg' },
+{ id: 'f45', genre: 'Fantasía', title: 'El guardián de los secretos', type:'movie', description:'Un joven elegido debe proteger antiguos secretos mágicos mientras lucha contra enemigos poderosos.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Guardián_de_los_secretos.webp' },
+{ id: 'f46', genre: 'Fantasía', title: 'La torre oscura', type:'movie', description:'Un pistolero recorre mundos mágicos para encontrar la torre que mantiene el equilibrio del universo.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/La_torre_oscura.webp' },
+{ id: 'f47', genre: 'Fantasía', title: 'El reino prohibido', type:'movie', description:'Un joven viaja a un reino mágico donde se une a leyendas y aprende artes marciales fantásticas.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Reino_prohibido.jpg' },
+{ id: 'f48', genre: 'Fantasía', title: 'El último maestro del aire', type:'movie', description:'En un mundo elemental, un joven maestro debe dominar los cuatro elementos para salvar su mundo.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Ultimo_maestro_del_aire.jpg' },
+{ id: 'f49', genre: 'Fantasía', title: 'Legend: El hechicero oscuro', type:'movie', description:'Un joven héroe debe enfrentarse a un hechicero que quiere sumir el mundo en la oscuridad.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Legend_hechicero.jpeg' },
+{ id: 'f50', genre: 'Fantasía', title: 'El reino de los cielos', type:'movie', description:'Un joven caballero se enfrenta a fuerzas sobrenaturales mientras protege su reino y su honor.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Reino_de_los_cielos.jpg' },
+{ id: 'f51', genre: 'Fantasía', title: 'El viajero del tiempo', type:'movie', description:'Un joven descubre un artefacto mágico que le permite viajar a mundos fantásticos y enfrentarse al mal.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Viajero_del_tiempo.jpg' },
+{ id: 'f53', genre: 'Fantasía', title: 'El legado de los magos', type:'movie', description:'Jóvenes magos deben unir fuerzas para proteger su legado y enfrentarse a un enemigo ancestral.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Legado_de_los_magos.jpg' },
+{ id: 'f54', genre: 'Fantasía', title: 'El druida', type:'movie', description:'Un druida joven descubre poderes antiguos y debe salvar su aldea de un mal inminente.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/El_druida.webp' },
+{ id: 'f59', genre: 'Fantasía', title: 'El reino de las sombras', type:'movie', description:'Un héroe solitario debe enfrentarse a criaturas oscuras y recuperar la luz de su mundo.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasFantasia/Reino_de_las_sombras.jpeg' },
+
+
+
+
+
+
+//Policial
+
+{ id: 'p1', genre: 'Policial', title: 'Se7en', type:'movie', description:'Dos detectives investigan a un asesino serial que utiliza los siete pecados capitales como motivo de sus crímenes.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Se7en.webp' },
+{ id: 'p2', genre: 'Policial', title: 'Zodiaco', type:'movie', description:'Basada en hechos reales, sigue la investigación de un asesino serial que aterró San Francisco durante los años 70.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Zodiaco.jpg' },
+{ id: 'p3', genre: 'Policial', title: 'Los infiltrados', type:'movie', description:'Un policía encubierto y un topo dentro de la policía intentan descubrirse mutuamente en medio de una guerra contra la mafia.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Infiltrados.jpg' },
+{ id: 'p4', genre: 'Policial', title: 'Fargo', type:'movie', description:'Un crimen mal planificado en Minnesota se convierte en una espiral de caos, investigado por una decidida oficial de policía.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Fargo.jpg' },
+{ id: 'p5', genre: 'Policial', title: 'Pulp Fiction', type:'movie', description:'Historias entrelazadas de criminales, asesinos a sueldo y boxeadores en Los Ángeles.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Pulp_Fiction.jpg' },
+{ id: 'p6', genre: 'Policial', title: 'El irlandés', type:'movie', description:'La historia de Frank Sheeran, un sicario de la mafia que reflexiona sobre su vida y sus crímenes.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/El_Irlandes.jpeg' },
+{ id: 'p7', genre: 'Policial', title: 'Ciudad de Dios', type:'movie', description:'La vida en una favela de Río de Janeiro donde los niños crecen rodeados de violencia y crimen organizado.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Ciudad_de_Dios.jpg' },
+{ id: 'p8', genre: 'Policial', title: 'Memories of Murder', type:'movie', description:'Dos detectives coreanos investigan los brutales asesinatos de mujeres en un pequeño pueblo durante los años 80.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Memories_of_Murder.webp' },
+{ id: 'p9', genre: 'Policial', title: 'Prisioneros', type:'movie', description:'Un padre desesperado toma la justicia por mano propia cuando su hija desaparece, mientras la policía sigue pistas confusas.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Prisioneros.jpg' },
+{ id: 'p10', genre: 'Policial', title: 'Training Day', type:'movie', description:'Un joven policía pasa un día de entrenamiento con un detective veterano corrupto en Los Ángeles.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Training_Day.webp' },
+{ id: 'p11', genre: 'Policial', title: 'Chinatown', type:'movie', description:'Un detective privado en Los Ángeles investiga un caso de adulterio y descubre una red de corrupción y secretos familiares.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Chinatown.jpg' },
+{ id: 'p12', genre: 'Policial', title: 'Sin lugar para los débiles', type:'movie', description:'Un cazador se topa con dinero de un cartel y desata una violenta persecución con un asesino implacable.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Sin_Lugar.jpg' },
+{ id: 'p13', genre: 'Policial', title: 'Taxi Driver', type:'movie', description:'Un excombatiente convertido en taxista se sumerge en la locura mientras planea un violento acto de justicia.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Taxi_Driver.webp' },
+{ id: 'p14', genre: 'Policial', title: 'Heat', type:'movie', description:'Un detective de Los Ángeles y un ladrón profesional se enfrentan en un duelo de ingenio y obsesión.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Heat.jpeg' },
+{ id: 'p15', genre: 'Policial', title: 'Mystic River', type:'movie', description:'Tres amigos de la infancia se ven envueltos en un crimen que reabre viejas heridas y secretos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Mystic_River.webp' },
+{ id: 'p16', genre: 'Policial', title: 'El silencio de los inocentes', type:'movie', description:'Una joven agente del FBI busca la ayuda de un brillante asesino para atrapar a otro criminal.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Silencio_inocentes.jpg' },
+{ id: 'p17', genre: 'Policial', title: 'Gone Baby Gone', type:'movie', description:'Dos detectives privados buscan a una niña desaparecida en Boston, revelando oscuros secretos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Gone_Baby.webp' },
+{ id: 'p18', genre: 'Policial', title: 'El secreto de sus ojos', type:'movie', description:'Un oficial de justicia argentino investiga un caso de asesinato mientras revive un amor imposible.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Secreto_Ojos.jpeg' },
+{ id: 'p19', genre: 'Policial', title: 'La isla siniestra', type:'movie', description:'Dos agentes investigan la desaparición de una paciente en un hospital psiquiátrico, descubriendo perturbadoras verdades.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Shutter_Island.jpg' },
+{ id: 'p20', genre: 'Policial', title: 'Oldboy', type:'movie', description:'Un hombre es secuestrado y encerrado durante 15 años, y al ser liberado busca venganza.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Oldboy.webp' },
+{ id: 'p21', genre: 'Policial', title: 'El padrino', type:'movie', description:'La saga de la familia Corleone, una de las más poderosas de la mafia en Nueva York.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Padrino1.jpg' },
+{ id: 'p22', genre: 'Policial', title: 'El padrino II', type:'movie', description:'La continuación de la historia de Michael Corleone y los orígenes de su padre, Vito Corleone.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Padrino2.jpg' },
+{ id: 'p23', genre: 'Policial', title: 'El padrino III', type:'movie', description:'Michael busca legitimar los negocios de la familia, pero viejos enemigos lo persiguen.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Padrino3.webp' },
+{ id: 'p24', genre: 'Policial', title: 'American Gangster', type:'movie', description:'La historia real de un narcotraficante de Harlem y el detective que intenta derribarlo.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/American_Gangster.webp' },
+{ id: 'p25', genre: 'Policial', title: 'Scarface', type:'movie', description:'La historia de Tony Montana, un inmigrante cubano que construye un imperio criminal en Miami.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Scarface.jpg' },
+{ id: 'p26', genre: 'Policial', title: 'Reservoir Dogs', type:'movie', description:'Un grupo de criminales planea un robo, pero todo se complica tras una traición.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Reservoir_Dogs.jpg' },
+{ id: 'p27', genre: 'Policial', title: 'L.A. Confidential', type:'movie', description:'Tres policías de Los Ángeles con métodos muy distintos investigan corrupción y asesinatos.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/LA_Confidential.webp' },
+{ id: 'p28', genre: 'Policial', title: 'Inception', type:'movie', description:'Un ladrón roba secretos entrando en los sueños de sus víctimas, pero su última misión es más peligrosa de lo esperado.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Inception.jpeg' },
+{ id: 'p29', genre: 'Policial', title: 'El topo', type:'movie', description:'Un veterano espía debe descubrir al infiltrado en los servicios secretos británicos.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/El_Topo.jpg' },
+{ id: 'p30', genre: 'Policial', title: 'Collateral', type:'movie', description:'Un taxista se ve forzado a conducir a un asesino a sueldo por una serie de encargos mortales.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Collateral.jpeg' },
+{ id: 'p31', genre: 'Policial', title: 'El abogado del diablo', type:'movie', description:'Un joven abogado entra a un bufete exitoso, pero descubre oscuros secretos detrás de su jefe.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Abogado_Diablo.jpg' },
+{ id: 'p32', genre: 'Policial', title: 'True Detective', type:'movie', description:'Dos detectives de Luisiana investigan asesinatos rituales durante 17 años.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/True_Detective.jpeg' },
+{ id: 'p33', genre: 'Policial', title: 'El halcón maltés', type:'movie', description:'Un detective se ve envuelto en la búsqueda de una valiosa estatuilla.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Halcon_Maltes.jpeg' },
+{ id: 'p34', genre: 'Policial', title: 'Memento', type:'movie', description:'Un hombre con pérdida de memoria a corto plazo intenta encontrar al asesino de su esposa.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Memento.jpg' },
+{ id: 'p35', genre: 'Policial', title: 'Insomnia', type:'movie', description:'Un detective investiga un asesinato en Alaska, pero sufre de insomnio y comienza a perder la cordura.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Insomnia.jpeg' },
+{ id: 'p36', genre: 'Policial', title: 'Donnie Brasco', type:'movie', description:'Un agente encubierto se infiltra en la mafia de Nueva York, desarrollando un vínculo peligroso.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Donnie_Brasco.webp' },
+{ id: 'p37', genre: 'Policial', title: 'El clan', type:'movie', description:'Basada en hechos reales, la historia de la familia Puccio que secuestraba personas en Argentina.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/El_Clan.jpg' },
+{ id: 'p38', genre: 'Policial', title: 'Sicario', type:'movie', description:'Una agente del FBI se une a una misión contra un cartel mexicano en la frontera.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Sicario.webp' },
+{ id: 'p39', genre: 'Policial', title: 'Tropa de Élite', type:'movie', description:'La dura realidad de una unidad especial de la policía en Río de Janeiro.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/TropaDeElite.jpg' },
+{ id: 'p40', genre: 'Policial', title: 'Serpico', type:'movie', description:'La historia real de un policía honesto que lucha contra la corrupción en Nueva York.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Serpico.jpg' },
+{ id: 'p41', genre: 'Policial', title: 'Infernal Affairs', type:'movie', description:'Un infiltrado de la policía en la mafia y un infiltrado de la mafia en la policía luchan por sobrevivir.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Infernal_Affairs.jpg' },
+{ id: 'p42', genre: 'Policial', title: 'The French Connection', type:'movie', description:'Dos detectives de Nueva York persiguen a narcotraficantes en un caso internacional.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/French_Connection.jpeg' },
+{ id: 'p43', genre: 'Policial', title: 'La noche es nuestra', type:'movie', description:'Un club nocturno y una familia policial en Nueva York se ven atrapados en un conflicto mortal.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Noche_nuestra.webp' },
+{ id: 'p44', genre: 'Policial', title: 'Miami Vice', type:'movie', description:'Dos detectives encubiertos luchan contra el narcotráfico en Miami.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Miami_Vice.jpeg' },
+{ id: 'p45', genre: 'Policial', title: 'El hombre de la mafia', type:'movie', description:'Un asesino a sueldo sigue la pista tras un robo de póker que involucra a la mafia.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Hombre_Mafia.jpg' },
+{ id: 'p46', genre: 'Policial', title: 'Enemigos públicos', type:'movie', description:'La historia de John Dillinger, el famoso ladrón de bancos de los años 30, y el FBI que lo persigue.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Enemigos_Publicos.jpeg' },
+{ id: 'p47', genre: 'Policial', title: 'Millennium: Los hombres que no amaban a las mujeres', type:'movie', description:'Un periodista y una hacker investigan un caso de desaparición lleno de secretos familiares.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Millennium.webp' },
+{ id: 'p48', genre: 'Policial', title: 'La redada', type:'movie', description:'Un escuadrón policial queda atrapado en un edificio controlado por criminales.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Raiz.jpg' },
+{ id: 'p49', genre: 'Policial', title: 'Enemy of the State', type:'movie', description:'Un abogado se convierte en fugitivo tras descubrir secretos del gobierno.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Enemy_State.jpg' },
+{ id: 'p50', genre: 'Policial', title: 'El fugitivo', type:'movie', description:'Un médico inocente escapa tras ser acusado del asesinato de su esposa mientras un agente lo persigue.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Fugitivo.webp' },
+{ id: 'p51', genre: 'Policial', title: 'Minority Report', type:'movie', description:'Un policía del futuro es acusado de un asesinato que aún no ha cometido.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Minority_Report.jpg' },
+{ id: 'p52', genre: 'Policial', title: 'El contador', type:'movie', description:'Un genio de las matemáticas con autismo lleva una doble vida como contador y asesino a sueldo.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Contador.jpg' },
+{ id: 'p53', genre: 'Policial', title: 'La huérfana negra', type:'movie', description:'Un caso policial se complica cuando se descubre una red de conspiraciones y dobles identidades.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Huerfana_negra.jpg' },
+{ id: 'p54', genre: 'Policial', title: 'El coleccionista de huesos', type:'movie', description:'Un detective paralizado y su asistente investigan a un asesino serial en Nueva York.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Coleccionista.jpeg' },
+{ id: 'p55', genre: 'Policial', title: 'El gran Gatsby', type:'movie', description:'cuenta la historia de Nick Carraway, un escritor que llega a Nueva York en 1922 y se convierte en vecino del millonario Jay Gatsby, conocido por sus fiestas lujosas. A través de los ojos de Nick, se desarrolla una historia de amor imposible', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/Gatsby.jpeg' },
+{ id: 'p56', genre: 'Policial', title: 'La hora del silencio', type:'movie', description:'Frank Shaw es un detective de Boston que tiene un accidente en acto de servicio y pierde la audición. Frustrado con su nueva vida, Frank contempla abandonar el cuerpo policial, pero su compañero Doug le convence para demostrar que puede seguir siendo un gran policíaUn detective paralizado y su asistente investigan a un asesino serial en Nueva York.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasPolicial/LaHoraDelSilencio.jpeg' },
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Accion
+
+{ id: 'a1', genre: 'Acción', title: 'Matrix', type:'movie', description:'Un hacker descubre la verdad detrás de la realidad y se une a la rebelión contra las máquinas.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Matrix.jpg' },
+{ id: 'a2', genre: 'Acción', title: 'Matrix Reloaded', type:'movie', description:'Neo continúa la lucha contra las máquinas en una batalla por el futuro de la humanidad.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Matrix_Reloaded.webp' },
+{ id: 'a3', genre: 'Acción', title: 'Matrix Revolutions', type:'movie', description:'La guerra entre humanos y máquinas alcanza su clímax.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Matrix_Revolutions.jpeg' },
+{ id: 'a4', genre: 'Acción', title: 'Matrix Resurrections', type:'movie', description:'Neo y Trinity regresan para enfrentar una nueva iteración de la Matrix.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Matrix_Resurrections.jpg' },
+{ id: 'a5', genre: 'Acción', title: 'Los Juegos del Hambre', type:'movie', description:'Katniss Everdeen lucha por sobrevivir en un brutal torneo televisado.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Hunger_Games1.jpg' },
+{ id: 'a6', genre: 'Acción', title: 'Los Juegos del Hambre: En llamas', type:'movie', description:'Katniss se convierte en símbolo de rebelión tras su victoria.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Hunger_Games2.webp' },
+{ id: 'a7', genre: 'Acción', title: 'Los Juegos del Hambre: Sinsajo Parte 1', type:'movie', description:'La rebelión se organiza para derrocar al Capitolio.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Hunger_Games3.jpg' },
+{ id: 'a8', genre: 'Acción', title: 'Los Juegos del Hambre: Sinsajo Parte 2', type:'movie', description:'La batalla final contra el Presidente Snow.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Hunger_Games4.webp' },
+{ id: 'a9', genre: 'Acción', title: 'Divergente', type:'movie', description:'En una sociedad de facciones, Tris descubre que es divergente.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Divergente1.webp' },
+{ id: 'a10', genre: 'Acción', title: 'Insurgente', type:'movie', description:'Tris y Cuatro luchan contra el sistema que los persigue.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Divergente2.jpg' },
+{ id: 'a11', genre: 'Acción', title: 'Leal', type:'movie', description:'La verdad detrás de las facciones cambia el destino del mundo.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Divergente3.jpg' },
+{ id: 'a12', genre: 'Acción', title: 'Mini Espías', type:'movie', description:'Dos hermanos deben rescatar a sus padres espías.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Spy_Kids.jpg' },
+{ id: 'a13', genre: 'Acción', title: 'Mini Espías 2: La isla de los sueños perdidos', type:'movie', description:'Nueva misión para los Cortez en una isla misteriosa.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Spy_Kids2.jpg' },
+{ id: 'a14', genre: 'Acción', title: 'Mini Espías 3D', type:'movie', description:'Los Cortez entran a un videojuego para detener a un villano.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Spy_Kids3.jpeg' },
+{ id: 'a15', genre: 'Acción', title: 'Hombres de Negro', type:'movie', description:'Dos agentes secretos protegen la Tierra de amenazas alienígenas.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/MIB1.jpg' },
+{ id: 'a16', genre: 'Acción', title: 'Hombres de Negro II', type:'movie', description:'Los agentes J y K se reencuentran para salvar al planeta.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/MIB2.jpg' },
+{ id: 'a17', genre: 'Acción', title: 'Hombres de Negro III', type:'movie', description:'Viaje en el tiempo para evitar una invasión.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/MIB3.jpg' },
+{ id: 'a18', genre: 'Acción', title: 'Transformers', type:'movie', description:'La guerra entre Autobots y Decepticons llega a la Tierra.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Transformers1.jpg' },
+{ id: 'a19', genre: 'Acción', title: 'Transformers: La venganza de los caídos', type:'movie', description:'Una antigua amenaza despierta contra los humanos.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Transformers2.jpg' },
+{ id: 'a20', genre: 'Acción', title: 'Transformers: El lado oscuro de la luna', type:'movie', description:'Secretos en la Luna cambian el curso de la guerra.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Transformers3.jpg' },
+{ id: 'a21', genre: 'Acción', title: 'Transformers: La era de la extinción', type:'movie', description:'Una nueva amenaza surge junto a los Dinobots.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Transformers4.webp' },
+{ id: 'a22', genre: 'Acción', title: 'Transformers: El último caballero', type:'movie', description:'La historia de los Transformers se remonta a la Edad Media.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Transformers5.jpg' },
+{ id: 'a23', genre: 'Acción', title: 'Bumblebee', type:'movie', description:'El Autobot encuentra refugio con una adolescente.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Bumblebee.jpg' },
+{ id: 'a24', genre: 'Acción', title: 'Transformers: El despertar de las bestias', type:'movie', description:'Maximals y Predacons entran en combate.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Transformers_Beasts.jpg' },
+{ id: 'a25', genre: 'Acción', title: 'Mortal Kombat', type:'movie', description:'Guerreros de la Tierra luchan en un torneo mortal.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mortal_Kombat_1995.jpg' },
+{ id: 'a26', genre: 'Acción', title: 'Mortal Kombat (2021)', type:'movie', description:'Reinicio del clásico con luchadores legendarios.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mortal_Kombat_2021.jpg' },
+{ id: 'a27', genre: 'Acción', title: 'John Wick', type:'movie', description:'Un exasesino regresa para vengar la pérdida de su perro.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/John_Wick1.webp' },
+{ id: 'a28', genre: 'Acción', title: 'John Wick 2', type:'movie', description:'John es arrastrado a una deuda de sangre.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/John_Wick2.jpg' },
+{ id: 'a29', genre: 'Acción', title: 'John Wick 3: Parabellum', type:'movie', description:'Una recompensa global pone a todos tras su cabeza.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/John_Wick3.jpg' },
+{ id: 'a30', genre: 'Acción', title: 'John Wick 4', type:'movie', description:'Guerra total contra la Alta Mesa.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/John_Wick4.webp' },
+{ id: 'a31', genre: 'Acción', title: 'Misión Imposible', type:'movie', description:'Ethan Hunt enfrenta a un traidor en la IMF.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mision1.jpg' },
+{ id: 'a32', genre: 'Acción', title: 'Misión Imposible 2', type:'movie', description:'Un virus mortal amenaza al mundo.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mision2.webp' },
+{ id: 'a33', genre: 'Acción', title: 'Misión Imposible 3', type:'movie', description:'Un traficante de armas pone a prueba a Ethan.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mision3.webp' },
+{ id: 'a34', genre: 'Acción', title: 'Misión Imposible: Protocolo Fantasma', type:'movie', description:'IMF es incriminada y debe operar en las sombras.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mision4.jpg' },
+{ id: 'a35', genre: 'Acción', title: 'Misión Imposible: Nación Secreta', type:'movie', description:'El Sindicato amenaza el orden mundial.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mision5.jpg' },
+{ id: 'a36', genre: 'Acción', title: 'Misión Imposible: Repercusión', type:'movie', description:'Un plan terrorista a escala global.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mision6.webp' },
+{ id: 'a37', genre: 'Acción', title: 'Misión Imposible: Sentencia Mortal Parte 1', type:'movie', description:'Una IA fuera de control pone en jaque al mundo.', platform:'Paramount+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Mision7.jpg' },
+{ id: 'a38', genre: 'Acción', title: 'La redada', type:'movie', description:'Un escuadrón queda atrapado en un edificio tomado por criminales.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/The_Raid.jpg' },
+{ id: 'a39', genre: 'Acción', title: 'La redada 2', type:'movie', description:'La lucha se expande a la mafia de la ciudad.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/The_Raid_2.jpeg' },
+{ id: 'a40', genre: 'Acción', title: 'Búsqueda Implacable', type:'movie', description:'Un exagente debe rescatar a su hija secuestrada.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Taken1.jpeg' },
+{ id: 'a41', genre: 'Acción', title: 'Búsqueda Implacable 2', type:'movie', description:'La venganza alcanza a la familia del héroe en Estambul.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Taken2.jpg' },
+{ id: 'a42', genre: 'Acción', title: 'Búsqueda Implacable 3', type:'movie', description:'Acusado injustamente, debe limpiar su nombre.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Taken3.jpg' },
+{ id: 'a43', genre: 'Acción', title: 'El Justiciero (The Equalizer)', type:'movie', description:'Un exagente ayuda a los indefensos con métodos letales.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Equalizer1.jpg' },
+{ id: 'a44', genre: 'Acción', title: 'El Justiciero 2', type:'movie', description:'Ajustando cuentas contra viejos compañeros.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Equalizer2.jpg' },
+{ id: 'a45', genre: 'Acción', title: 'El Justiciero 3', type:'movie', description:'Última cruzada en un pueblo costero italiano.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Equalizer3.webp' },
+{ id: 'a46', genre: 'Acción', title: 'Identidad Desconocida', type:'movie', description:'Un hombre sin memoria descubre que es un letal agente.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Bourne1.webp' },
+{ id: 'a47', genre: 'Acción', title: 'La Supremacía Bourne', type:'movie', description:'El pasado regresa para cazarlo.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Bourne2.jpg' },
+{ id: 'a48', genre: 'Acción', title: 'El Ultimátum Bourne', type:'movie', description:'Bourne descubre el origen de su entrenamiento.', platform:'Prime Video', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Bourne3.jpg' },
+{ id: 'a49', genre: 'Acción', title: 'Predator: Killer of Killers', type:'movie', description:'Guerreros de épocas distintas enfrentan a cazadores yautja.', platform:'Disney+', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Predator_Killer_of_Killers.jpg' },
+{ id: 'a50', genre: 'Acción', title: 'Sed de venganza', type:'series', description:'Historia de crimen y ajuste de cuentas contemporánea.', platform:'Televisión', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Sed_de_Venganza.jpg' },
+{ id: 'a51', genre: 'Acción', title: 'Megalodón', type:'movie', description:'Un grupo de científicos enfrenta a un tiburón prehistórico gigante.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Megalodon1.jpg' },
+{ id: 'a52', genre: 'Acción', title: 'Megalodón 2: El Foso', type:'movie', description:'Una expedición desata nuevas criaturas del abismo.', platform:'HBO Max', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Megalodon2.jpg' },
+{ id: 'a53', genre: 'Acción', title: 'Megalodón 3', type:'movie', description:'Nueva amenaza bajo el mar (proyecto rumoreado para 2025).', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Megalodon3.jpg' },
+{ id: 'a54', genre: 'Acción', title: 'The Amateur', type:'movie', description:'Un analista chantajea a la CIA para entrenarse y vengarse por su cuenta. (2025)', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/The_Amateur.jpg' },
+{ id: 'a55', genre: 'Acción', title: 'Ballerina', type:'movie', description:'Spin-off de John Wick: una bailarina letal busca venganza. (2025)', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Ballerina.webp' },
+{ id: 'a56', genre: 'Acción', title: 'Rápido y Furioso (The Fast and the Furious)', type:'movie', description:'Brian O\'Conner, un policía encubierto, se infiltra en el mundo de las carreras callejeras y conoce a Dominic Toretto.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos1.jpeg' },
+{ id: 'a57', genre: 'Acción', title: 'Más Rápido, Más Furioso (2 Fast 2 Furious)', type:'movie', description:'Brian se une a un viejo amigo para derribar a un peligroso narcotraficante en Miami.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos2.webp' },
+{ id: 'a58', genre: 'Acción', title: 'Rápido y Furioso: Reto Tokio (The Fast and the Furious: Tokyo Drift)', type:'movie', description:'Sean Boswell se muda a Japón y se adentra en el mundo de las carreras de derrape.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos3.jpg' },
+{ id: 'a59', genre: 'Acción', title: 'Rápidos y Furiosos (Fast & Furious)', type:'movie', description:'Dom y Brian se reúnen para acabar con un cartel de drogas en México.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos4.jpg' },
+{ id: 'a60', genre: 'Acción', title: 'Rápidos y Furiosos: 5in Control (Fast Five)', type:'movie', description:'Dom y Brian forman un equipo para realizar un gran golpe en Río de Janeiro mientras son perseguidos por Hobbs.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos5.jpg' },
+{ id: 'a61', genre: 'Acción', title: 'Rápidos y Furiosos 6 (Fast & Furious 6)', type:'movie', description:'El equipo recibe la oferta de borrar sus antecedentes si ayudan a atrapar a una peligrosa organización criminal.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos6.jpeg' },
+{ id: 'a62', genre: 'Acción', title: 'Rápidos y Furiosos 7 (Furious 7)', type:'movie', description:'Deckard Shaw busca venganza contra Dom y su familia por la derrota de su hermano.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos7.jpeg' },
+{ id: 'a63', genre: 'Acción', title: 'Rápidos y Furiosos 8 (The Fate of the Furious)', type:'movie', description:'Cipher obliga a Dom a traicionar a su familia, lo que desata una batalla global.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos8.jpg' },
+{ id: 'a64', genre: 'Acción', title: 'Rápidos y Furiosos: Hobbs & Shaw', type:'movie', description:'Spin-off donde Hobbs y Shaw unen fuerzas para detener a un villano modificado genéticamente.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/HobbsShaw.jpg' },
+{ id: 'a65', genre: 'Acción', title: 'Rápidos y Furiosos 9 (F9)', type:'movie', description:'El equipo enfrenta a Jakob, el hermano perdido de Dom, que trabaja junto a Cipher.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos9.jpeg' },
+{ id: 'a66', genre: 'Acción', title: 'Rápidos y Furiosos 10 (Fast X)', type:'movie', description:'Dante Reyes busca vengarse de Dom y su equipo por la caída de su padre en Río.', platform:'Universal Pictures', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos10.jpeg' },
+{ id: 'a67', genre: 'Acción', title: 'Rápidos y Furiosos 11 (Fast X: Part 2)', type:'movie', description:'La saga llega a su gran final con la conclusión de la historia de Dom Toretto y su familia.', platform:'Cine (2025)', poster:'PeliculasRecomendadasPorLaPagina/PeliculasAccion/Rapidos11.jpeg' },
+
+
+
+
+// Drama — Super tristes — Películas 2025
+{ id: 'd1', genre: 'Drama', title: 'After the Hunt', type:'movie', description:'Una profesora universitaria enfrenta acusaciones y dilemas éticos que reviven viejos traumas.', platform:'Venecia Film Festival', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/After_the_Hunt.jpg' },
+{ id: 'd2', genre: 'Drama', title: 'Straw', type:'movie', description:'Una madre soltera desesperada toma medidas extremas mientras cuida a su hija terminalmente enferma.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Straw.jpeg' },
+{ id: 'd3', genre: 'Drama', title: 'Hamnet', type:'movie', description:'William Shakespeare y su esposa atraviesan el duelo por la muerte de su hijo.', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Hamnet.jpeeg' },
+{ id: 'd4', genre: 'Drama', title: 'The History of Sound', type:'movie', description:'Dos músicos comienzan una relación durante la posguerra que será definida por pérdida y pasión.', platform:'Cannes', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/History_of_Sound.jpg' },
+{ id: 'd6', genre: 'Drama', title: 'Deaf', type:'movie', description:'Una mujer sorda espera un hijo y debe enfrentar sus diferencias con su pareja oyente.', platform:'Berlín', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Deaf.jpg' },
+{ id: 'd7', genre: 'Drama', title: 'My Oxford Year', type:'movie', description:'Una estudiante americana en Oxford lucha por el amor y su identidad personal.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/My_Oxford_Year.jpg' },
+{ id: 'd8', genre: 'Drama', title: 'The Scout', type:'movie', description:'Una mujer escoge locaciones para cine mientras desgrana el costo emocional de su vocación.', platform:'Tribeca', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/The_Scout.jpg' },
+{ id: 'd9', genre: 'Drama', title: 'Love Me Tender', type:'movie', description:'Una madre lucha por la custodia de su hijo mientras vive una nueva relación.', platform:'Cannes', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Love_Me_Tender.jpg' },
+{ id: 'd10', genre: 'Drama', title: 'The Love That Remains', type:'movie', description:'Un paisaje familiar escandinavo marcado por pérdida, memoria y reconexión.', platform:'Cannes', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Love_That_Remains.jpg' },
+{ id: 'd11', genre: 'Drama', title: 'Jay Kelly', type:'movie', description:'Un actor famoso enfrenta una crisis existencial mientras redescubre su humanidad y familia.', platform:'Venecia', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Jay_Kelly.jpg' },
+{ id: 'd12', genre: 'Drama', title: 'Kokuho (Living National Treasure)', type:'movie', description:'Actores de kabuki pagan un alto precio personal por alcanzar el estatus de tesoro nacional.', platform:'Cine (Japón)', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Kokuho.jpg' },
+{ id: 'd13', genre: 'Drama', title: 'Rosemead', type:'movie', description:'Una madre enferma toma decisiones extremas para proteger a su hijo de impulsos oscuros.', platform:'Tribeca', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Rosemead.jpg' },
+{ id: 'd14', genre: 'Drama', title: 'Sentimental Value', type:'movie', description:'Un retrato familiar doloroso, íntimo y despojado, donde el amor y el duelo coexisten.', platform:'Cannes', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Sentimental_Value.jpg' },
+{ id: 'd15', genre: 'Drama', title: 'Renoir', type:'movie', description:'Una familia japonesa enfrenta enfermedad, duelo y recuerdos en los años 80.', platform:'Cannes', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Renoir.jpg' },
+{ id: 'd16', genre: 'Drama', title: 'Girls on Wire', type:'movie', description:'Una madre soltera huye de un narco, enfrentando desesperación y resentimientos violentos.', platform:'Berlín', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Girls_on_Wire.jpg' },
+{ id: 'd17', genre: 'Drama', title: 'After the Hunt (duplicada?)', type:'movie', description:'Dilemas éticos universitarios reviven viejos distanciamientos y verdades dolorosas.', platform:'Venecia', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/After_the_Hunt.jpg' },
+{ id: 'd18', genre: 'Drama', title: 'At Work', type:'movie', description:'Un fotógrafo abandona su carrera artística y se enfrenta a la pobreza y su idealismo.', platform:'Venecia', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/At_Work.jpg' },
+{ id: 'd19', genre: 'Drama', title: 'A Big Bold Beautiful Journey', type:'movie', description:'Dos extraños conectan en una odisea emocional que los transforma profundamente.', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Big_Bold_Beautiful_Journey.jpg' },
+{ id: 'd20', genre: 'Drama', title: 'Sinners', type:'movie', description:'Hermanos enfrentan un mal mayor a su regreso al hogar, redención y horror se mezclan.', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Sinners.jpg' },
+{ id: 'd21', genre: 'Drama', title: 'The Life of Chuck', type:'movie', description:'Tres capítulos de la vida de un hombre común, profundamente conmovedores.', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Life_of_Chuck.jpg' },
+{ id: 'd22', genre: 'Drama', title: 'The Smashing Machine', type:'movie', description:'Un peleador libra una batalla emocional brutal dentro y fuera del ring.', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Smashing_Machine.jpg' },
+{ id: 'd23', genre: 'Drama', title: 'F1: The Movie', type:'movie', description:'Un corredor retirado vuelve a la pista mientras carga culpa, pérdidas y esperanza.', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/F1_The_Movie.jpg' },
+{ id: 'd24', genre: 'Drama', title: 'Straw (repetida?)', type:'movie', description:'La desesperación maternal en juego, amor extremo y sacrificio personal.', platform:'Netflix', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Straw.jpg' },
+{ id: 'd25', genre: 'Drama', title: 'Hard Truths', type:'movie', description:'Una historia intensa de revelaciones crudas y relaciones al filo de lo imposible.', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Hard_Truths.jpg' },
+{ id: 'd26', genre: 'Drama', title: 'Beneath the Willow', type:'movie', description:'Una mujer enfrenta la pérdida de su hermana y busca sentido en un pequeño pueblo.', platform:'Cannes', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Beneath_the_Willow.jpg' },
+{ id: 'd27', genre: 'Drama', title: 'Echoes of Silence', type:'movie', description:'Un periodista reconstruye su infancia marcada por secretos familiares y abandono.', platform:'Berlín', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Echoes_of_Silence.jpg' },
+{ id: 'd28', genre: 'Drama', title: 'Winter Garden', type:'movie', description:'Madres e hijas confrontan traumas del pasado mientras intentan reconciliarse.', platform:'Venecia', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Winter_Garden.jpg' },
+{ id: 'd29', genre: 'Drama', title: 'The Last Letter', type:'movie', description:'Un hombre descubre cartas antiguas que reescriben la historia de su familia y amor perdido.', platform:'Cine', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/The_Last_Letter.jpg' },
+{ id: 'd30', genre: 'Drama', title: 'Fading Memories', type:'movie', description:'Una mujer con Alzheimer recuerda fragmentos de su vida mientras su familia lidia con la pérdida.', platform:'Tribeca', poster:'PeliculasRecomendadasPorLaPagina/PeliculasDrama/Fading_Memories.jpg' },
 
 
 
@@ -404,12 +692,9 @@ const CATALOG = [
 
 
 
-
-
-  // ... (el resto de tu CATALOG sigue igual)
 ];
 
-// ====== Mostrar género con 31 películas ======
+// ====== Mostrar género ======
 function showGenre(genre) {
   gvTitle.textContent = genre;
   cardsEl.innerHTML = '';
@@ -426,6 +711,8 @@ function showGenre(genre) {
     const meta = item.type === 'series' ? `${item.seasons} temporada(s) • ${item.episodes} capítulo(s)` : 'Película';
     const ratingValue = (store[item.id]?.rating) || 0;
     const reviewText = (store[item.id]?.review) || '';
+    const seen = (store[item.id]?.seen) || false;
+
     card.innerHTML = `
       <img src="${item.poster}" alt="${item.title}"/>
       <div class="card-body">
@@ -433,12 +720,15 @@ function showGenre(genre) {
         <div class="meta">${meta}</div>
         <p class="desc">${item.description}</p>
         <p class="platform">Plataforma: <b>${item.platform}</b></p>
-        <div class="stars" data-id="${item.id}" aria-label="Valorar de 1 a 5">${renderStars(ratingValue)}</div>
+        <div class="stars" data-id="${item.id}">${renderStars(ratingValue)}</div>
         <textarea class="review" placeholder="Escribí tu reseña aquí..." data-id="${item.id}">${reviewText}</textarea>
         <div class="card-actions">
           <button class="save-btn" data-id="${item.id}">Guardar</button>
           <button class="clear-btn" data-id="${item.id}">Borrar</button>
         </div>
+        <button class="btn-seen ${seen ? 'seen' : ''}" data-id="${item.id}">
+          ${seen ? "¡Ya la vi!" : "No la vi"}
+        </button>
       </div>`;
     cardsEl.appendChild(card);
   });
@@ -459,13 +749,14 @@ function showHome() {
   history.replaceState({}, '', '#');
 }
 
-// ====== Eventos ======
+// ====== Eventos globales ======
 document.addEventListener('click', (e) => {
   const g = e.target.closest('.genre');
   if(g) { showGenre(g.getAttribute('data-genre')); return; }
 
   if(e.target.id === 'btnBack') { showHome(); return; }
 
+  // ⭐ estrellas
   const star = e.target.closest('.star');
   if(star){
     const starsWrap = e.target.closest('.stars');
@@ -478,6 +769,7 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  // 💾 guardar reseña
   if(e.target.classList.contains('save-btn')){
     const id = e.target.getAttribute('data-id');
     const textarea = cardsEl.querySelector(`textarea[data-id="${id}"]`);
@@ -489,6 +781,7 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  // 🗑 borrar reseña
   if(e.target.classList.contains('clear-btn')){
     const id = e.target.getAttribute('data-id');
     const store = loadStore();
@@ -502,17 +795,41 @@ document.addEventListener('click', (e) => {
     setTimeout(() => e.target.textContent = 'Borrar', 900);
     return;
   }
+
+  // 👀 botón "No la vi / ¡Ya la vi!"
+  if(e.target.classList.contains('btn-seen')){
+    const id = e.target.getAttribute('data-id');
+    const store = loadStore();
+    const seen = !(store[id]?.seen); // toggle
+    store[id] = { ...(store[id]||{}), seen };
+    saveStore(store);
+
+    e.target.classList.toggle("seen", seen);
+    e.target.textContent = seen ? "¡Ya la vi!" : "No la vi";
+    return;
+  }
 });
 
 // ====== Sorpréndeme ======
 btnSurprise.addEventListener('click', () => {
-  const item = CATALOG[Math.floor(Math.random()*CATALOG.length)];
-  showGenre(item.genre);
-  setTimeout(() => {
-    const idx = CATALOG.filter(x=>x.genre===item.genre).findIndex(x=>x.id===item.id);
-    const card = cardsEl.children[idx];
-    if(card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 200);
+  const item = CATALOG[Math.floor(Math.random() * CATALOG.length)];
+  document.getElementById('sPoster').src = item.poster;
+  document.getElementById('sPoster').alt = item.title;
+  document.getElementById('sTitle').textContent = item.title;
+  document.getElementById('sDesc').textContent = item.description || "Sin descripción.";
+  document.getElementById('sPlatform').textContent = "Plataforma: " + (item.platform || "Desconocida");
+
+  document.getElementById('genres').classList.add('hidden');
+  document.querySelector('.surprise-section').classList.add('hidden');
+  document.getElementById('genre-view').classList.add('hidden');
+  document.getElementById('surprise-result').classList.remove('hidden');
+});
+
+// Botón volver en sorpresa
+document.getElementById('sBack').addEventListener('click', () => {
+  document.getElementById('surprise-result').classList.add('hidden');
+  document.getElementById('genres').classList.remove('hidden');
+  document.querySelector('.surprise-section').classList.remove('hidden');
 });
 
 // ====== Deep-link por hash ======
