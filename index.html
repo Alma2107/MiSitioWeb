@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Netflix Mood (SPA)</title>
- <link rel="stylesheet" href="styles.css" />
+  <title>TuCineIdeal</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  
   <!-- INTRO VIDEO -->
   <div id="intro-container">
     <video id="intro-video" autoplay muted playsinline>
@@ -15,104 +16,145 @@
     </video>
   </div>
 
-  <!-- MAIN -->
+  <!-- CONTENIDO PRINCIPAL -->
   <div id="main-content">
 
     <!-- HEADER -->
-    <header>
-      <img src="logonetflix.png" class="logo" alt="Netflix Mood" />
-      <div class="menu-icons">
-        <button class="menu-btn" id="btnRegistrar">Registrarse</button>
-        <button class="menu-btn" id="btnVerListado">Ver listado</button>
-      </div>
-    </header>
+   <header>
+    <div class="menu-icons">
+  <button class="menu-btn" id="btnRegistrar">Registrarse</button>
+  <button class="menu-btn" id="btnVerListado">Iniciar Sesion</button>
+  <button class="menu-btn" id="btnBiblioteca">Mi Biblioteca</button>
+  <button class="menu-btn" id="btnForo">Foro</button>
+</div>
 
-    <div class="curved-red-top">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,50 L1440,50" fill="transparent" stroke="red" stroke-width="16"/>
-      </svg>
-    </div>
+   </header>
 
-    <div class="hero">Domingo, sillón y pelis. Vos elegís el mood, nosotros el resto.</div>
 
-    <div class="curved-red-top">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,100 Q720,-80 1440,100" fill="transparent" stroke="red" stroke-width="16"/>
-      </svg>
+    <!-- HERO -->
+    <div class="hero">
+      Domingo, sillón y pelis. Vos elegís el mood, nosotros el resto.
     </div>
 
     <!-- GÉNEROS -->
     <section class="curved-section" id="genres">
       <h2>¿Qué preferís ver un domingo a la noche?</h2>
       <div class="genre-options">
-        <div class="genre" data-genre="Romance"><p>Romance</p><img src="Portadas/PortadaGeneroRomance.jpeg" alt="Romance"/></div>
-        <div class="genre" data-genre="Terror"><p>Terror</p><img src="Portadas/PortadaGeneroTerror.webp" alt="Terror"/></div>
-        <div class="genre" data-genre="Comedia"><p>Comedia</p><img src="Portadas/PortadaGeneroComedia.jpeg" alt="Comedia"/></div>
-        <div class="genre" data-genre="Studio Ghibli"><p>Studio Ghibli</p><img src="Portadas/PortadaGeneroStudioGhibli.jpg" alt="Studio Ghibli"/></div>
-        <div class="genre" data-genre="Superhéroes"><p>Superhéroes</p><img src="Portadas/PortadaGeneroSuperheroes.jpg" alt="Superhéroes"/></div>
-        <div class="genre" data-genre="Animación"><p>Animación</p><img src="Portadas/PortadaGeneroAnimacion.jpg" alt="Animación"/></div>
-        <div class="genre" data-genre="Princesas"><p>Princesas</p><img src="Portadas/PortadaGeneroPrincesa.jpg" alt="Princesas"/></div>
-         <div class="genre" data-genre="Historia"><p>Historia</p><img src="Portadas/PortadaGeneroHistoria.jpg" alt="Historia"/></div>
-        <div class="genre" data-genre="Fantasía"><p>Fantasia</p><img src="Portadas/PortadaGeneroFantasia.jpeg" alt="Fantasía"/></div>
-        <div class="genre" data-genre="Policial"><p>Policial</p><img src="Portadas/PortadaGeneroPolicial.webp" alt="Policial"/></div>
-        <div class="genre" data-genre="Acción"><p>Accion</p><img src="Portadas/PortadaGeneroAccion.jpg" alt="Acción"/></div>
-        <div class="genre" data-genre="Drama"><p>Para Llorar</p><img src="Portadas/PortadaGeneroParaLlorar.jpeg" alt="Drama"/></div>
+        <!-- Cada género con su data-genre -->
+        <div class="genre" data-genre="Romance">
+          <p>Romance</p>
+          <img src="Portadas/PortadaGeneroRomance.jpeg" alt="Romance"/>
+        </div>
+        <div class="genre" data-genre="Terror">
+          <p>Terror</p>
+          <img src="Portadas/PortadaGeneroTerror.webp" alt="Terror"/>
+        </div>
+        <div class="genre" data-genre="Comedia">
+          <p>Comedia</p>
+          <img src="Portadas/PortadaGeneroComedia.jpeg" alt="Comedia"/>
+        </div>
+        <div class="genre" data-genre="Studio Ghibli">
+          <p>Studio Ghibli</p>
+          <img src="Portadas/PortadaGeneroStudioGhibli.jpg" alt="Studio Ghibli"/>
+        </div>
+        <div class="genre" data-genre="Superhéroes">
+          <p>Superhéroes</p>
+          <img src="Portadas/PortadaGeneroSuperheroes.jpg" alt="Superhéroes"/>
+        </div>
+        <div class="genre" data-genre="Animación">
+          <p>Animación</p>
+          <img src="Portadas/PortadaGeneroAnimacion.jpg" alt="Animación"/>
+        </div>
+        <div class="genre" data-genre="Princesas">
+          <p>Princesas</p>
+          <img src="Portadas/PortadaGeneroPrincesa.jpg" alt="Princesas"/>
+        </div>
+        <div class="genre" data-genre="Historia">
+          <p>Historia</p>
+          <img src="Portadas/PortadaGeneroHistoria.jpg" alt="Historia"/>
+        </div>
+        <div class="genre" data-genre="Fantasía">
+          <p>Fantasía</p>
+          <img src="Portadas/PortadaGeneroFantasia.jpeg" alt="Fantasía"/>
+        </div>
+        <div class="genre" data-genre="Policial">
+          <p>Policial</p>
+          <img src="Portadas/PortadaGeneroPolicial.webp" alt="Policial"/>
+        </div>
+        <div class="genre" data-genre="Acción">
+          <p>Acción</p>
+          <img src="Portadas/PortadaGeneroAccion.jpg" alt="Acción"/>
+        </div>
+        <div class="genre" data-genre="Drama">
+          <p>Para Llorar</p>
+          <img src="Portadas/PortadaGeneroParaLlorar.jpeg" alt="Drama"/>
+        </div>
       </div>
     </section>
 
-    <div class="curved-red-bottom">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,0 Q720,180 1440,0" fill="transparent" stroke="red" stroke-width="16"/>
-      </svg>
-    </div>
-
-    <!-- SORPRÉNDEME -->
-    <section class="surprise-section">
+    <!-- SECCIÓN SORPRÉNDEME -->
+    <section class="surprise-section home-only">
       <h2 class="surprise-title">No sé qué ver... ¡Sorprendeme!</h2>
-      <button class="surprise-button" id="btnSurprise">Click aquí</button>
+      <button class="btn-toggle-view" id="btnSurprise">Click aquí</button>
     </section>
 
     <!-- RESULTADO SORPRÉNDEME -->
-<section id="surprise-result" class="hidden">
-  <div class="surprise-card">
-    <img id="sPoster" src="" alt="Poster película" />
-    <div class="s-info">
-      <h2 id="sTitle"></h2>
-      <p id="sDesc"></p>
-      <p id="sPlatform"></p>
-      <textarea id="sReview" placeholder="Escribí tu reseña aquí..."></textarea>
-      <div class="btn-group">
-        <button id="sSave" class="btn btn-save">💾 Guardar reseña</button>
-        <button id="sBack" class="btn btn-back">⬅ Volver</button>
+    <section id="surprise-result" class="hidden">
+      <div class="surprise-card">
+        <img id="sPoster" src="" alt="Poster película" />
+        <h2 id="sTitle"></h2>
+        <p id="sDesc"></p>
+        <p id="sPlatform"></p>
+        <button id="sBack" class="btn-back">⬅ Volver</button>
       </div>
-    </div>
+    </section>
+
+    <!-- VISTA DE GÉNERO -->
+    <section id="genre-view" class="hidden genre-only">
+      <div class="gv-header">
+        <h2 class="gv-title" id="gvTitle">Género</h2>
+        <div class="gv-right">
+          <button class="back-btn" id="btnBack">← Volver</button>
+          <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar película..." />
+            <button id="searchBtn">🔍</button>
+          </div>
+        </div>
+      </div>
+
+      <p id="noResultsMessage" class="hidden no-results">
+        No se encuentra por el momento :, podés ir al 
+        <a href="foro.html">foro</a> y agregar películas ahí!
+      </p>
+
+      <!-- Contenedor de las tarjetas dinámicas -->
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      Alma Azul Carena - Programación - 5°3 - Redes y Diseño de Páginas Web
+    </footer>
   </div>
-</section>
-
-
-
-    <!-- VISTA DINÁMICA DE GÉNERO / LISTADO -->
-<section id="genre-view" class="hidden" aria-live="polite">
-  <div class="gv-header">
-    <h2 class="gv-title" id="gvTitle">Género</h2>
-    <div style="display:flex; gap:8px; align-items:center;">
-      <button class="back-btn" id="btnBack">← Volver</button>
-    </div>
-  </div>
-  <div class="cards" id="cards"></div>
-
-  <!--  curva roja SOLO en la vista de género -->
-  <div class="curved-red-bottom">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-      <path d="M0,0 Q720,180 1440,0" fill="transparent" stroke="red" stroke-width="16"/>
-    </svg>
-  </div>
-</section>
-
-<footer>Alma Azul Carena - Programacion - 5°3 - Redes y Diseño de Paginas Web</footer>
-</div>
-  <script src="script.js"></script>
   
+<!-- FORMULARIO DE REGISTRO (MODAL) -->
+<div id="registerModal" class="hidden modal">
+  <div class="modal-content">
+    <h2>Crear cuenta</h2>
+    <form action="registrar.php" method="POST" autocomplete="off">
+      <input type="text" name="nombre" placeholder="Nombre completo" required />
+      <input type="email" name="email" placeholder="Correo electrónico" required />
+      <input type="password" name="password" placeholder="Contraseña" minlength="6" required />
+      <button type="submit" class="menu-btn">Registrarse</button>
+      <button type="button" class="menu-btn" id="closeRegister">Cancelar</button>
+    </form>
+  </div>
+</div>
 
-  </body>
-  </html>
+  <!-- SCRIPT PRINCIPAL -->
+  <script type="module" src="script.js"></script>
+  <!-- FORMULARIO DE REGISTRO (MODAL) -->
+
+
+</body>
+</html>
