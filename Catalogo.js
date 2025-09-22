@@ -1,7 +1,7 @@
 //catalogo
 // ====== CATALOG ======
 // Aquí va tu CATALOG tal como lo pusiste
-const CATALOG = [
+export const CATALOG = [
 
 
 // Romance
@@ -638,4 +638,3 @@ const CATALOG = [
 
 
 
-export { CATALOG };
