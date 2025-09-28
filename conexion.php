@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$dbname = "cineforo"; // el nombre de tu base de datos
-$user = "root";          // usuario por defecto en XAMPP
-$pass = "";              // contraseña vacía por defecto en XAMPP
+$dbname = "cineforo"; 
+$user = "root";         
+$pass = "";              
 
 try {
     $conexion = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);

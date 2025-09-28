@@ -1,87 +1,96 @@
-// ======== ESTADO DEL USUARIO (desde localStorage si existe) ========
-let isLoggedIn   = JSON.parse(localStorage.getItem("isLoggedIn"))   || false;
+// ==============================
+// ESTADO DEL USUARIO
+// ==============================
+let isLoggedIn    = JSON.parse(localStorage.getItem("isLoggedIn"))   || false;
 let isDeactivated = JSON.parse(localStorage.getItem("isDeactivated")) || false;
-let currentUser  = localStorage.getItem("currentUser") || "";
+let currentUser   = localStorage.getItem("currentUser") || "";
 
-// ======== REFERENCIAS ========
+// ==============================
+// SELECTORES
+// ==============================
 const btnRegister   = document.getElementById("btnRegister");
 const btnLogin      = document.getElementById("btnLogin");
 const btnDeactivate = document.getElementById("btnDeactivate");
 const btnDelete     = document.getElementById("btnDelete");
 const btnForo       = document.getElementById("btnForo");
 const saludo        = document.getElementById("userGreeting");
+const btnSobre      = document.getElementById("btnSobre");
+const btnVolver     = document.getElementById("btnVolver");
+const aboutSection  = document.getElementById("about-section");
+const mainContent   = document.getElementById("main-content");
 
-// MODALES
 const modalRegister = document.getElementById("modal-register");
 const modalLogin    = document.getElementById("modal-login");
 
-// ======== FUNCIONES ========
+// ==============================
+// GUARDAR ESTADO EN localStorage + PHP
+// ==============================
 function saveState() {
   localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
   localStorage.setItem("isDeactivated", JSON.stringify(isDeactivated));
   localStorage.setItem("currentUser", currentUser);
 
-  // Sincronizar con PHP
-  if(isLoggedIn && !isDeactivated && currentUser){
-    fetch('login_session.php', {
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:`user=${encodeURIComponent(currentUser)}`
+  if (isLoggedIn && !isDeactivated && currentUser) {
+    fetch("login_session.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `user=${encodeURIComponent(currentUser)}`
     });
   } else {
-    // Si no está logueado, limpiar sesión PHP
-    fetch('logout_session.php', { method:'POST' });
+    fetch("logout_session.php", { method: "POST" });
   }
 }
 
+// ==============================
+// ACTUALIZAR BOTONES
+// ==============================
 function updateButtons() {
-  // Ocultar todos los botones primero
-  [btnRegister, btnLogin, btnDeactivate, btnDelete, btnForo, saludo].forEach(el => el.style.display = "none");
+  [btnRegister, btnLogin, btnDeactivate, btnDelete, btnForo, saludo, btnSobre, btnVolver]
+    .forEach(el => { if (el) el.style.display = "none"; });
 
   if (!isLoggedIn) {
-    // Usuario no logueado → puede registrarse o iniciar sesión
-    btnRegister.style.display = "inline-block";
-    btnLogin.style.display = "inline-block";
+    if (btnRegister) btnRegister.style.display = "inline-block";
+    if (btnLogin) btnLogin.style.display = "inline-block";
+    if (btnSobre) btnSobre.style.display = "inline-block";
   } else if (isDeactivated) {
-    // Usuario desactivado → solo puede iniciar sesión
-    btnLogin.style.display = "inline-block";
+    if (btnLogin) btnLogin.style.display = "inline-block";
+    if (btnSobre) btnSobre.style.display = "inline-block";
   } else {
-    // Usuario activo → muestra foro, desactivar, eliminar y saludo
-    btnForo.style.display = "inline-block";
-    btnDeactivate.style.display = "inline-block";
-    btnDelete.style.display = "inline-block";
-    saludo.style.display = "inline-block";
-    saludo.textContent = `¡Hola, ${currentUser}!`;
+    if (btnForo) btnForo.style.display = "inline-block";
+    if (btnDeactivate) btnDeactivate.style.display = "inline-block";
+    if (btnDelete) btnDelete.style.display = "inline-block";
+    if (saludo) {
+      saludo.style.display = "inline-block";
+      saludo.textContent = `¡Hola, ${currentUser}!`;
+    }
+    if (btnSobre) btnSobre.style.display = "inline-block";
   }
 }
 
-function openModal(modal) {
-  modal.classList.remove("hidden");
-}
+// ==============================
+// MODALES
+// ==============================
+function openModal(modal) { if (modal) modal.classList.remove("hidden"); }
+function closeModal(modal) { if (modal) modal.classList.add("hidden"); }
 
-function closeModal(modal) {
-  modal.classList.add("hidden");
-}
-
-// ======== EVENTOS BOTONES ========
-btnLogin.addEventListener("click", () => openModal(modalLogin));
-btnRegister.addEventListener("click", () => openModal(modalRegister));
-
-document.getElementById("login_cancel").addEventListener("click", () => closeModal(modalLogin));
-document.getElementById("reg_cancel").addEventListener("click", () => closeModal(modalRegister));
-
-// Cerrar clic afuera del modal
+if (btnLogin) btnLogin.addEventListener("click", () => openModal(modalLogin));
+if (btnRegister) btnRegister.addEventListener("click", () => openModal(modalRegister));
+const loginCancel = document.getElementById("log_cancel");
+if (loginCancel) loginCancel.addEventListener("click", () => closeModal(modalLogin));
+const regCancel = document.getElementById("reg_cancel");
+if (regCancel) regCancel.addEventListener("click", () => closeModal(modalRegister));
 window.addEventListener("click", (e) => {
   if (e.target === modalLogin) closeModal(modalLogin);
   if (e.target === modalRegister) closeModal(modalRegister);
 });
 
-// ======== ACCIONES USUARIO ========
-// Registro
-document.getElementById("registerForm").addEventListener("submit", (e) => {
+// ==============================
+// FORMULARIOS
+// ==============================
+const registerForm = document.getElementById("registerForm");
+if (registerForm) registerForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const nombreInput = e.target.nombre.value.trim();
-  if(nombreInput) currentUser = nombreInput;
+  currentUser = e.target.nombre.value.trim();
   isLoggedIn = true;
   isDeactivated = false;
   saveState();
@@ -90,11 +99,11 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
   e.target.reset();
 });
 
-// Login
-document.getElementById("loginForm").addEventListener("submit", (e) => {
+const loginForm = document.getElementById("loginForm");
+if (loginForm) loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const correoInput = e.target.correo.value.trim();
-  currentUser = correoInput.split("@")[0]; // Parte antes del @
+  currentUser = correoInput.includes("@") ? correoInput.split("@")[0] : correoInput;
   isLoggedIn = true;
   isDeactivated = false;
   saveState();
@@ -103,16 +112,17 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
   e.target.reset();
 });
 
-// Desactivar cuenta
-btnDeactivate.addEventListener("click", () => {
+// ==============================
+// DESACTIVAR / ELIMINAR CUENTA
+// ==============================
+if (btnDeactivate) btnDeactivate.addEventListener("click", () => {
   isDeactivated = true;
   isLoggedIn = false;
   saveState();
   updateButtons();
 });
 
-// Eliminar cuenta
-btnDelete.addEventListener("click", () => {
+if (btnDelete) btnDelete.addEventListener("click", () => {
   isLoggedIn = false;
   isDeactivated = false;
   currentUser = "";
@@ -120,5 +130,24 @@ btnDelete.addEventListener("click", () => {
   updateButtons();
 });
 
-// ======== INICIO ========
+// ==============================
+// SOBRE NOSOTROS
+// ==============================
+if (btnSobre) btnSobre.addEventListener("click", () => {
+  mainContent.classList.add("hidden");
+  aboutSection.classList.remove("hidden");
+  btnSobre.classList.add("hidden");
+  btnVolver.classList.remove("hidden");
+});
+
+if (btnVolver) btnVolver.addEventListener("click", () => {
+  aboutSection.classList.add("hidden");
+  mainContent.classList.remove("hidden");
+  btnVolver.classList.add("hidden");
+  btnSobre.classList.remove("hidden");
+});
+
+// ==============================
+// INICIALIZAR
+// ==============================
 updateButtons();

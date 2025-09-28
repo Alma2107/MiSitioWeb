@@ -1,10 +1,7 @@
-// ==============================
-// IMPORTAR CATALOGO
-// ==============================
 import { CATALOG } from './Catalogo.js';
 
 // ==============================
-// SELECTORES
+// SELECTORES PRINCIPALES
 // ==============================
 const introContainer = document.getElementById('intro-container');
 const introVideo = document.getElementById('intro-video');
@@ -30,62 +27,51 @@ const sBack = document.getElementById('sBack');
 
 const genreElements = document.querySelectorAll('.genre');
 
-// ==============================
-// BLOQUEO DE CONTROLES
-// ==============================
-const allControls = document.querySelectorAll(
-  "#btnRegister, #btnLogin, #btnDeactivate, #btnDelete, #btnForo, " +
-  "#searchInput, #searchBtn, #btnBack, #btnSurprise, .genre"
-);
-
-function lockControls() {
-  allControls.forEach(ctrl => {
-    if (ctrl) ctrl.setAttribute("disabled", "true");
-  });
-}
-
-function unlockControls() {
-  allControls.forEach(ctrl => {
-    if (ctrl) ctrl.removeAttribute("disabled");
-  });
-}
+const btnSobre = document.getElementById("btnSobre");
+const btnVolver = document.getElementById("btnVolver");
+const aboutSection = document.getElementById("about-section");
 
 // ==============================
-// INTRO SOLO UNA VEZ
+// INTRO VIDEO
 // ==============================
 window.addEventListener("DOMContentLoaded", () => {
   const introSeen = localStorage.getItem("introSeen");
 
   if (introSeen) {
-    // Ya se vio -> saltar intro directo
     introContainer.style.display = "none";
     mainContent.classList.add("active");
-    unlockControls();
   } else {
-    // Primera vez -> mostrar intro
-    lockControls();
-
     introVideo.addEventListener("ended", () => {
       introContainer.style.display = "none";
       mainContent.classList.add("active");
-      unlockControls();
-
-      // Guardar que ya se vio
       localStorage.setItem("introSeen", "true");
     });
   }
 });
 
 // ==============================
-// FUNCIONES
+// FUNCIONES SECCIONES
 // ==============================
+function showHome() {
+  genresSection.classList.remove('hidden');
+  genreView.classList.add('hidden');
+  surpriseResult.classList.add('hidden');
+  aboutSection.classList.add('hidden');
 
-// Mostrar películas de un género
+  document.body.classList.add('view-home');
+  document.body.classList.remove('view-genre');
+
+  // Header: mostrar "Sobre nosotros", ocultar "Volver"
+  btnSobre.classList.remove('hidden');
+  btnVolver.classList.add('hidden');
+}
+
 function showGenre(genre) {
   gvTitle.textContent = genre;
   cardsContainer.innerHTML = '';
 
   const movies = CATALOG.filter(movie => movie.genre === genre);
+
   if (movies.length === 0) {
     noResultsMessage.classList.remove('hidden');
   } else {
@@ -103,29 +89,74 @@ function showGenre(genre) {
     });
   }
 
-  // Cambiar vistas
-  document.body.classList.remove('view-home');
-  document.body.classList.add('view-genre');
   genresSection.classList.add('hidden');
   genreView.classList.remove('hidden');
   surpriseResult.classList.add('hidden');
+  aboutSection.classList.add('hidden');
+
+  document.body.classList.remove('view-home');
+  document.body.classList.add('view-genre');
+
+  // Header: mostrar "Sobre nosotros", ocultar "Volver"
+  btnSobre.classList.remove('hidden');
+  btnVolver.classList.add('hidden');
 }
 
-// Volver a home
-function backHome() {
-  document.body.classList.add('view-home');
-  document.body.classList.remove('view-genre');
+function showAbout() {
+  aboutSection.classList.remove('hidden');
+  genresSection.classList.add('hidden');
   genreView.classList.add('hidden');
-  genresSection.classList.remove('hidden');
   surpriseResult.classList.add('hidden');
+
+  // Header: ocultar "Sobre nosotros", mostrar "Volver"
+  btnSobre.classList.add('hidden');
+  btnVolver.classList.remove('hidden');
 }
 
-// Buscar películas en género
-function searchMovies() {
+function surpriseMe() {
+  const randomMovie = CATALOG[Math.floor(Math.random() * CATALOG.length)];
+  sPoster.src = randomMovie.poster;
+  sTitle.textContent = randomMovie.title;
+  sDesc.textContent = randomMovie.description;
+  sPlatform.textContent = `Plataforma: ${randomMovie.platform}`;
+
+  genresSection.classList.add('hidden');
+  genreView.classList.add('hidden');
+  surpriseResult.classList.remove('hidden');
+  aboutSection.classList.add('hidden');
+
+  document.body.classList.remove('view-home');
+
+  // Header: mostrar "Sobre nosotros", ocultar "Volver"
+  btnSobre.classList.remove('hidden');
+  btnVolver.classList.add('hidden');
+}
+
+// ==============================
+// EVENTOS
+// ==============================
+
+// Click en géneros
+genreElements.forEach(genreEl => {
+  genreEl.addEventListener('click', () => showGenre(genreEl.dataset.genre));
+});
+
+// Botón volver home
+btnBack.addEventListener('click', () => {
+  showHome();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+sBack.addEventListener('click', () => {
+  showHome();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Buscar película
+searchBtn.addEventListener('click', () => {
   const query = searchInput.value.toLowerCase();
   const cards = cardsContainer.querySelectorAll('.card');
-  let found = false;
 
+  let found = false;
   cards.forEach(card => {
     const title = card.querySelector('h3').textContent.toLowerCase();
     if (title.includes(query)) {
@@ -136,43 +167,28 @@ function searchMovies() {
     }
   });
 
-  if (!found) {
-    noResultsMessage.classList.remove('hidden');
-  } else {
-    noResultsMessage.classList.add('hidden');
-  }
-}
-
-// Sorpréndeme
-function surpriseMe() {
-  const randomMovie = CATALOG[Math.floor(Math.random() * CATALOG.length)];
-  sPoster.src = randomMovie.poster;
-  sTitle.textContent = randomMovie.title;
-  sDesc.textContent = randomMovie.description;
-  sPlatform.textContent = `Plataforma: ${randomMovie.platform}`;
-
-  // Cambiar vistas
-  genresSection.classList.add('hidden');
-  genreView.classList.add('hidden');
-  surpriseResult.classList.remove('hidden');
-  document.body.classList.remove('view-home');
-}
-
-// ==============================
-// EVENTOS
-// ==============================
-genreElements.forEach(genreEl => {
-  genreEl.addEventListener('click', () => {
-    const genre = genreEl.dataset.genre;
-    showGenre(genre);
-  });
+  noResultsMessage.classList.toggle('hidden', found);
 });
 
-btnBack.addEventListener('click', backHome);
-sBack.addEventListener('click', backHome);
-searchBtn.addEventListener('click', searchMovies);
+// Enter en input de búsqueda
 searchInput.addEventListener('keypress', e => {
-  if (e.key === 'Enter') searchMovies();
+  if (e.key === 'Enter') searchBtn.click();
 });
 
+// Sorpresa aleatoria
 surpriseBtn.addEventListener('click', surpriseMe);
+
+// Mostrar secciones
+btnSobre.addEventListener('click', () => {
+  showAbout();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+btnVolver.addEventListener('click', () => {
+  showHome();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ==============================
+// INICIO
+// ==============================
+showHome();

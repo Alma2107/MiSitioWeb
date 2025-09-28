@@ -11,29 +11,31 @@ session_start();
 </head>
 <body class="view-home">
 
- <!-- INTRO VIDEO -->
-<div id="intro-container">
-  <video id="intro-video" autoplay muted playsinline>
-    <source src="Netflix Intro 4k (AI upscaled).mp4" type="video/mp4" />
-    Tu navegador no soporta el video.
-  </video>
-</div>
+  <!-- INTRO VIDEO -->
+  <div id="intro-container">
+    <video id="intro-video" autoplay muted playsinline>
+      <source src="Netflix Intro 4k (AI upscaled).mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
+  </div>
 
+  <!-- HEADER (siempre visible) -->
+  <header>
+    <div class="menu-icons">
+      <img src="logo.png" alt="TuCineIdeal" style="height:60px; margin-right:20px;" />
+      <button class="menu-btn" id="btnRegister" type="button">Registrarse</button>
+      <button class="menu-btn" id="btnLogin" type="button">Iniciar Sesión</button>
+      <button class="menu-btn" id="btnForo" type="button" onclick="location.href='foro.php'">Foro</button>
+      <button class="menu-btn" id="btnDeactivate" type="button">Desactivar cuenta</button>
+      <button class="menu-btn" id="btnDelete" type="button">Eliminar cuenta</button>
+      <button class="menu-btn" id="btnSobre" type="button">Sobre nosotros</button>
+      <button class="menu-btn hidden" id="btnVolver" type="button">Volver</button>
+      <span id="userGreeting" style="color: var(--red); margin-left:10px;"></span>
+    </div>
+  </header>
 
   <!-- CONTENIDO PRINCIPAL -->
   <div id="main-content">
-    <!-- HEADER -->
-    <header>
-      <div class="menu-icons">
-        <button class="menu-btn" id="btnRegister" type="button">Registrarse</button>
-        <button class="menu-btn" id="btnLogin" type="button">Iniciar Sesión</button>
-        <button class="menu-btn" id="btnForo" type="button" onclick="location.href='foro.php'">Foro</button>
-        <button class="menu-btn" id="btnDeactivate" type="button">Desactivar cuenta</button>
-        <button class="menu-btn" id="btnDelete" type="button">Eliminar cuenta</button>
-        <span id="userGreeting" style="color: var(--red); margin-left:10px;"></span>
-      </div>
-    </header>
-
     <!-- HERO -->
     <section class="hero home-only">
       <span>Domingo, sillón y pelis. Vos elegís el mood, nosotros el resto.</span>
@@ -100,30 +102,63 @@ session_start();
     </footer>
   </div>
 
-  <!-- MODAL REGISTRO -->
+  <!-- SECCIÓN SOBRE NOSOTROS -->
+  <section id="about-section" class="hidden">
+    <div class="about-me">
+      <div class="about-photo">
+        <img src="photo.jpg" alt="Tu foto" />
+      </div>
+      <div class="about-text">
+        <h2>¿Quién soy?</h2>
+        <p>Soy Alma Azul Carena, estudiante de programación y diseño de páginas web. 🚀</p>
+        <p>Este proyecto es mi cine ideal, un lugar donde podés elegir películas según tu mood, sorprenderte con recomendaciones y participar en un foro con otros cinéfilos.</p>
+        <h2>¿Qué es TuCineIdeal?</h2>
+        <p>Una plataforma pensada para vos, donde la experiencia de elegir una peli se convierte en algo divertido, interactivo y diferente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FONDO ANIMADO ===== -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- ===== MODAL REGISTRO ===== -->
   <div id="modal-register" class="modal hidden">
     <div class="modal-content form-card">
       <span class="close-btn" id="reg_cancel">×</span>
-      <h2>Crear tu cuenta</h2>
+      <h2 class="form-title">Crear nueva cuenta</h2>
       <form id="registerForm" method="post" action="registrar.php">
-        <input name="nombre" placeholder="Nombre completo" required />
-        <input name="correo" type="email" placeholder="Correo electrónico" required />
-        <input name="telefono" placeholder="Teléfono (opcional)" />
-        <input name="clave" type="password" placeholder="Contraseña" required />
+        <div class="input-group">
+          <span class="icon">👤</span>
+          <input name="nombre" placeholder="Nombre completo" required />
+        </div>
+        <div class="input-group">
+          <span class="icon">📧</span>
+          <input name="correo" type="email" placeholder="Correo electrónico" required />
+        </div>
+        <div class="input-group">
+          <span class="icon">📱</span>
+          <input name="telefono" placeholder="Teléfono (opcional)" />
+        </div>
         <button type="submit" class="btn-submit">Registrarse</button>
       </form>
     </div>
   </div>
 
-  <!-- MODAL LOGIN -->
+  <!-- ===== MODAL LOGIN ===== -->
   <div id="modal-login" class="modal hidden">
     <div class="modal-content form-card">
-      <span class="close-btn" id="login_cancel">×</span>
-      <h2>Iniciar Sesión</h2>
+      <span class="close-btn" id="log_cancel">×</span>
+      <h2 class="form-title">Iniciar sesión</h2>
       <form id="loginForm" method="post" action="login.php">
-        <input id="login_correo" name="correo" type="email" placeholder="Correo electrónico" required />
-        <input id="login_password" name="clave" type="password" placeholder="Contraseña" required />
-        <button type="submit" id="login_submit" class="btn-submit">Ingresar</button>
+        <div class="input-group">
+          <span class="icon">📧</span>
+          <input name="correo" type="email" placeholder="Correo electrónico" required />
+        </div>
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input name="password" type="password" placeholder="Contraseña" required />
+        </div>
+        <button type="submit" class="btn-submit">Ingresar</button>
       </form>
     </div>
   </div>
