@@ -32,20 +32,37 @@ const btnVolver = document.getElementById("btnVolver");
 const aboutSection = document.getElementById("about-section");
 
 // ==============================
-// INTRO VIDEO
+// VIDEO DE INTRODUCCIÓN
 // ==============================
 window.addEventListener("DOMContentLoaded", () => {
   const introSeen = localStorage.getItem("introSeen");
 
   if (introSeen) {
+    // Si ya vio el video antes
     introContainer.style.display = "none";
     mainContent.classList.add("active");
   } else {
+    // Mostrar video solo la primera vez
     introVideo.addEventListener("ended", () => {
-      introContainer.style.display = "none";
-      mainContent.classList.add("active");
-      localStorage.setItem("introSeen", "true");
+      introContainer.classList.add("fade-out");
+      setTimeout(() => {
+        introContainer.remove();
+        mainContent.classList.add("active");
+        localStorage.setItem("introSeen", "true");
+      }, 800);
     });
+
+    // Si tarda demasiado, forzar salida
+    setTimeout(() => {
+      if (introContainer) {
+        introContainer.classList.add("fade-out");
+        setTimeout(() => {
+          introContainer.remove();
+          mainContent.classList.add("active");
+          localStorage.setItem("introSeen", "true");
+        }, 800);
+      }
+    }, 6000);
   }
 });
 
@@ -58,10 +75,13 @@ function showHome() {
   surpriseResult.classList.add('hidden');
   aboutSection.classList.add('hidden');
 
+  // 🟢 Mostrar la sección “¡Sorprendeme!”
+  const surpriseSection = document.querySelector('.surprise-section');
+  if (surpriseSection) surpriseSection.classList.remove('hidden');
+
   document.body.classList.add('view-home');
   document.body.classList.remove('view-genre');
 
-  // Header: mostrar "Sobre nosotros", ocultar "Volver"
   btnSobre.classList.remove('hidden');
   btnVolver.classList.add('hidden');
 }
@@ -97,7 +117,6 @@ function showGenre(genre) {
   document.body.classList.remove('view-home');
   document.body.classList.add('view-genre');
 
-  // Header: mostrar "Sobre nosotros", ocultar "Volver"
   btnSobre.classList.remove('hidden');
   btnVolver.classList.add('hidden');
 }
@@ -108,7 +127,10 @@ function showAbout() {
   genreView.classList.add('hidden');
   surpriseResult.classList.add('hidden');
 
-  // Header: ocultar "Sobre nosotros", mostrar "Volver"
+  // 🔴 Ocultar la sección “¡Sorprendeme!”
+  const surpriseSection = document.querySelector('.surprise-section');
+  if (surpriseSection) surpriseSection.classList.add('hidden');
+
   btnSobre.classList.add('hidden');
   btnVolver.classList.remove('hidden');
 }
@@ -127,7 +149,6 @@ function surpriseMe() {
 
   document.body.classList.remove('view-home');
 
-  // Header: mostrar "Sobre nosotros", ocultar "Volver"
   btnSobre.classList.remove('hidden');
   btnVolver.classList.add('hidden');
 }

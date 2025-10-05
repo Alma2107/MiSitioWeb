@@ -19,7 +19,7 @@ session_start();
     </video>
   </div>
 
-  <!-- HEADER (siempre visible) -->
+  <!-- HEADER -->
   <header>
     <div class="menu-icons">
       <img src="logo.png" alt="TuCineIdeal" style="height:60px; margin-right:20px;" />
@@ -110,8 +110,8 @@ session_start();
       </div>
       <div class="about-text">
         <h2>¿Quién soy?</h2>
-        <p>Soy Alma Azul Carena, estudiante de programación y diseño de páginas web. 🚀</p>
-        <p>Este proyecto es mi cine ideal, un lugar donde podés elegir películas según tu mood, sorprenderte con recomendaciones y participar en un foro con otros cinéfilos.</p>
+        <p>Hola chicos solo quiero aprobar. </p>
+        <p>Este proyecto es mi cine ideal, una pagina donde podés elegir películas según tu mood, sorprenderte con recomendaciones y participar en un foro con otros cinéfilos.</p>
         <h2>¿Qué es TuCineIdeal?</h2>
         <p>Una plataforma pensada para vos, donde la experiencia de elegir una peli se convierte en algo divertido, interactivo y diferente.</p>
       </div>
@@ -135,10 +135,17 @@ session_start();
           <span class="icon">📧</span>
           <input name="correo" type="email" placeholder="Correo electrónico" required />
         </div>
+         <div class="input-group">
+          <span class="icon">🔑</span>
+          <input name="password" type="password" placeholder="Contraseña" required />
+        </div>
         <div class="input-group">
           <span class="icon">📱</span>
           <input name="telefono" placeholder="Teléfono (opcional)" />
         </div>
+        
+        
+
         <button type="submit" class="btn-submit">Registrarse</button>
       </form>
     </div>
@@ -164,7 +171,8 @@ session_start();
   </div>
 
   <!-- SCRIPTS -->
-  <script type="module" src="script.js"></script>
+   <script type="module" src="script.js"></script>
   <script src="auth.js"></script>
+  
 </body>
 </html>

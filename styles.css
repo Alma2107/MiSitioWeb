@@ -58,6 +58,22 @@ html, body {
   opacity: 1;
   visibility: visible;
 }
+#btnVolver {
+  background: var(--red);
+  color: var(--text);
+  font-weight: 600;
+  border: none;
+  padding: 9px 14px;
+  font-size: 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#btnVolver:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 40px var(--red);
+}
 
 /* ============================= */
 /* HEADER */
@@ -754,3 +770,4 @@ footer p {
     padding: 20px;
   }
 }
+
