@@ -1,12 +1,11 @@
 <?php
-$host = "localhost";
-$dbname = "cineforo"; 
-$user = "root";         
-$pass = "";              
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "cineforo"; // o el nombre que uses
 
-try {
-    $conexion = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Error de conexión: {$conn->connect_error}");
 }
