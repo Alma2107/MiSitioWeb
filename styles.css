@@ -28,38 +28,12 @@ html, body {
 }
 
 /* ============================= */
-/* INTRO */
+/* MAIN CONTENT */
 /* ============================= */
-#intro-container {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg);
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out;
-}
-
-#intro-container.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
 #main-content {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.8s ease-in-out;
-  padding-top: 100px;
+  padding-top: 100px; /* espacio por el header fijo */
+  /* ya no hace falta opacity ni visibility */
 }
-
-#main-content.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-
 
 /* ============================= */
 /* HEADER */
@@ -72,13 +46,12 @@ header {
   align-items: center;
   padding: 15px 30px;
   border-bottom: 1px solid #111;
-  position: fixed;   /* 👈 fijo */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
 }
-
 
 
 /* LOGO CIRCULAR */

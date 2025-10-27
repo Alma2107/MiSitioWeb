@@ -10,15 +10,6 @@ session_start();
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="view-home">
-
-  <div id="intro-container">
-    <video id="intro-video" autoplay muted playsinline>
-      <source src="Netflix Intro 4k (AI upscaled).mp4" type="video/mp4" />
-      Tu navegador no soporta el video.
-    </video>
-  </div>
-
-
   <header>
     <div class="menu-icons">
       <img src="logo.png" alt="TuCineIdeal" style="height:60px; margin-right:20px;" />
